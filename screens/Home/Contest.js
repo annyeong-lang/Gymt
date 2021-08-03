@@ -40,10 +40,7 @@ const nowContest = [
 ];
 
 export default ({ loading }) => (
-<ScrollView
-    style={{
-    //  backgroundColor: "white"
-    }}
+  <ScrollView
     contentContainerStyle={{
       flex: 1,
       justifyContent: loading ? "center" : "flex-start"

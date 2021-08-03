@@ -5,7 +5,6 @@ import Tabs from "./Tabs";
 const Stack = createStackNavigator();
 
 export default () => (
-  /*일단은 navigation 탭 냅두는데 나중에 없애고 tab을 App.js에 넣는 시도 할 예정. */
   <Stack.Navigator
     screenOptions={{
       headerShown: false, //이게 header안보이게

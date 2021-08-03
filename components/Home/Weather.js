@@ -1,7 +1,6 @@
 //날씨 정보
 import React from "react";
 import { Text, StyleSheet } from "react-native";
-import { Entypo } from '@expo/vector-icons';
 import styled from "styled-components/native";
 import Title from "../Title";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -18,9 +17,7 @@ const Container = styled.View`
 const Weather_container = styled.View`
   padding: 10px 0px;  
   padding-bottom: 20px;
-  <!--background-color: rgb(240, 240, 240);-->
   margin: 0 20px;
-
   border-radius: 25px;
   display: flex;
   justify-content: center;
@@ -71,8 +68,8 @@ const weatherOptions = {
 export default ({ temp, condition, humidity }) => (
   <>
     <Container>
-      <Entypo name="location-pin" size={24} color="purple" />
-      <Title title={"전라남도"} />
+      <MaterialCommunityIcons name="weather-sunny" size={24} color="orange" />
+      <Title title={"오늘의 날씨"} />
     </Container>
     <Weather_container>
       <LinearGradient
@@ -102,7 +99,6 @@ const styles = StyleSheet.create({
     width: 190,
     height: 190,
     borderRadius: '50%'
-//    backgroundColor: rgb(166, 255, 178)
   },
   temp: {
     fontSize: 20,

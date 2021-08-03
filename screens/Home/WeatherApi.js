@@ -6,9 +6,9 @@ import * as Location from "expo-location"
 import axios from "axios";
 import Weather from "../../components/Home/Weather";
 import styled from "styled-components/native";
-import { Entypo } from '@expo/vector-icons';
 import Title from "../../components/Title";
 import Border from "../../components/Home/Border";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const API_KEY = "94dea71c10b27b8da09d12bf914ae49c";
 const GOOGLE_KEY = "#";
@@ -69,8 +69,8 @@ export default class WeatherApi extends React.Component {
     return isLoading ? (
     <>
       <Container>
-        <Entypo name="location-pin" size={24} color="purple" />
-        <Title title={"전라남도"} />
+        <MaterialCommunityIcons name="weather-sunny" size={24} color="orange" />
+        <Title title={"오늘의 날씨"} />      
       </Container>
       <Loading />
       <Border/>

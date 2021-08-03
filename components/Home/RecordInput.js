@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import styled from "styled-components/native";
 import Modal from 'react-native-modal'
+import PropTypes from 'prop-types';
 
 
 const Text = styled.Text``;
@@ -117,10 +118,6 @@ function RecordInput(props) {
           <TouchableOpacity onPress={()=>{onPress(6)}} style={pressImage.find(item=> item.id===6).press ? styles.untouched : styles.touched}>
             <BG source={require('../../image/tennis.png')} />
           </TouchableOpacity>
-          {/*
-          <TouchableOpacity onPress={onPress} style={pressImage ? styles.untouched : styles.touched}>
-            <BG source={require('../../image/bicycle.png')} />
-           */}
         </ImageBox>
         {/* 운동 시간 */}
         <p style={{fontWeight: 900}}>운동 시간</p>
