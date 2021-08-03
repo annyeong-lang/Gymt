@@ -46,7 +46,6 @@ export default ({ navigation, route }) => {
       tabBarOptions={{
         activeTintColor: 'white',
         inactiveTintColor: 'lightgray',
-        /*css 실험 (margin, height...)*/
         iconStyle: {
           marginTop:5
         },

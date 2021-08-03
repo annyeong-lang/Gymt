@@ -5,7 +5,6 @@ import { ScrollView, ActivityIndicator, RefreshControl } from "react-native";
 const ScrollContainer = ({
   loading,
   children,
-  contentContainerStyle,
   refreshFn
 }) => {
   const [refreshing, setRefreshing] = useState(false);
