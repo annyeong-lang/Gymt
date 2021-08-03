@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, StyleSheet } from "react-native";
+import { View, Text, TextInput, StyleSheet, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 import { Dimensions } from 'react-native';
 import { Feather } from '@expo/vector-icons';
@@ -51,7 +51,8 @@ export default function Settings() {
   const [selectedCity, setSelectedCity] = useState();
   const [selectedGun, setSelectedGun] = useState();
   const [selectedDo, setSelectedDo] = useState();
-
+  const [PasswordCondition, setPasswordCondition]= useState(true);
+  const [LocationCondition, setLocationCondition]= useState(true);
   return (
     <Container>
       <Edit>
@@ -63,50 +64,58 @@ export default function Settings() {
         <View stlye={styles.formColumn}>
           <View style={styles.form}>
             <Text style={styles.formLabel}>비밀번호 변경
-              <Feather style={styles.icon} name="edit" size={18} color="black" />
+              <TouchableOpacity onPress={()=>{setPasswordCondition(!PasswordCondition)}}>
+                <Feather style={styles.icon} name="edit" size={18} color="black" />
+              </TouchableOpacity>
             </Text>
+            <View pointerEvents={PasswordCondition ? 'none' : 'auto'}>
             <TextInput
               value={password}
               placeholder="********"
               onChangeText={setPassword}
-              style={styles.formInput}
+              style={PasswordCondition? styles.focusedFormInput : styles.formInput}
               autoCapitalize="none"
               autoCorrect={false}
               secureTextEntry={true}
             />
+            </View>
           </View>
           <View style={styles.formElement}>
             <Text style={styles.formLabel}>위치
-              <Feather style={styles.icon} name="edit" size={18} color="black" />
+              <TouchableOpacity onPress={()=>{setLocationCondition(!LocationCondition)}}>
+                <Feather style={styles.icon} name="edit" size={18} color="black" />
+              </TouchableOpacity>
             </Text>
-            <Picker
-              style={styles.picker}
-              selectedValue={selectedCity}
-              onValueChange={(itemValue) =>
-                setSelectedCity(itemValue)
-              }>
-              <Picker.Item label="광양시" value="광양시" />
-              <Picker.Item label="여주시" value="여주시" />
-            </Picker>
-            <Picker
-              style={styles.picker}
-              selectedValue={selectedGun}
-              onValueChange={(itemValue) =>
-                setSelectedGun(itemValue)
-              }>
-              <Picker.Item label="진도군" value="여주시" />
-              <Picker.Item label="장흥군" value="장흥군" />
-            </Picker>
-            <Picker
-              style={styles.picker}
-              selectedValue={selectedDo}
-              onValueChange={(itemValue) =>
-                setSelectedDo(itemValue)
-              }>
-              <Picker.Item label="하당동" value="하당동" />
-              <Picker.Item label="여청동" value="여청동" />
-              <Picker.Item label="쌍봉동" value="쌍봉동" />
-            </Picker>
+            <View pointerEvents={LocationCondition ? 'none' : 'auto'}>
+              <Picker
+                style={LocationCondition? styles.focusedPicker : styles.picker}
+                selectedValue={selectedCity}
+                onValueChange={(itemValue) =>
+                  setSelectedCity(itemValue)
+                }>
+                <Picker.Item label="광양시" value="광양시" />
+                <Picker.Item label="여주시" value="여주시" />
+              </Picker>
+              <Picker
+                style={LocationCondition? styles.focusedPicker : styles.picker}
+                selectedValue={selectedGun}
+                onValueChange={(itemValue) =>
+                  setSelectedGun(itemValue)
+                }>
+                <Picker.Item label="진도군" value="여주시" />
+                <Picker.Item label="장흥군" value="장흥군" />
+              </Picker>
+              <Picker
+                style={LocationCondition? styles.focusedPicker : styles.picker}
+                selectedValue={selectedDo}
+                onValueChange={(itemValue) =>
+                  setSelectedDo(itemValue)
+                }>
+                <Picker.Item label="하당동" value="하당동" />
+                <Picker.Item label="여청동" value="여청동" />
+                <Picker.Item label="쌍봉동" value="쌍봉동" />
+              </Picker>
+            </View>
           </View>
         </View>
         </View>
@@ -169,8 +178,24 @@ const styles = StyleSheet.create({
     borderColor: "grey",
     padding: 13
   },
+  focusedFormInput: {
+    marginTop: 5,
+    height: 35,
+    minWidth: 200,
+    borderRadius:10,
+    borderWidth: 1,
+    borderColor: "grey",
+    backgroundColor: "rgba(1, 1, 1, 0.05)",
+    padding: 13
+  },
   picker: {
     padding: 8,
+    borderRadius: 10,
+    marginTop: 5
+  },
+  focusedPicker: {
+    padding: 8,
+    backgroundColor: "rgba(1, 1, 1, 0.05)",
     borderRadius: 10,
     marginTop: 5
   }
