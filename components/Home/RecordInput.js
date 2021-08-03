@@ -10,7 +10,7 @@ const Text = styled.Text``;
 const ImageBox = styled.View`
   display: flex;
   flex-direction: row;
-  border: 1px solid rgba(1, 1, 1, 0.5);
+  border: 1px solid rgba(1, 1, 1, 0.2);
   border-radius: 25px;
   padding: 10px 10px;
   margin-bottom: 10px;
@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 25,
     borderWidth: 3,
-    borderColor: 'purple'
+    borderColor: 'rgb(13, 98, 122)'
   },
   textInputStyle: {
     width: '10%',
@@ -208,14 +208,14 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   button1: {
-    backgroundColor: "#DBB2FF",
+    backgroundColor: "rgb(194, 192, 231)",
     borderRadius: 25,
     width: '45%',
     padding: 10,
     textAlign: 'center',
   },
   button2: {
-    backgroundColor: "#A6FFB2",
+    backgroundColor: "rgba(236, 159, 87, 0.8)",
     borderRadius: 25,
     width: '45%',
     padding: 10,

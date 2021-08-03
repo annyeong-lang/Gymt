@@ -7,7 +7,6 @@ const Width = Dimensions.get('window').width;
 
 const Container = styled.View`
   padding: 0 20px;
-  padding-top: 20px;
   background-color: rgba(12, 144, 125, 1);
   width: 100%;
   dislpay: flex;
