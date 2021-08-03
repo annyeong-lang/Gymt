@@ -8,9 +8,6 @@ import Setting from "../screens/Setting/Setting";
 import { Platform } from "react-native";
 import { Entypo } from '@expo/vector-icons';
 
-//테스트용
-import Login from "../Login";
-
 const Tabs = createBottomTabNavigator();
 
 const getHeaderName = route =>

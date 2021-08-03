@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { TextInput, StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import styled from "styled-components/native";
-import { Dimensions } from 'react-native';
-
-const Width = Dimensions.get('window').width;
+import { useNavigation } from "@react-navigation/native";
 
 const Container = styled.View`
   padding: 0 20px;
@@ -24,11 +22,15 @@ const BG = styled.Image`
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-    
+
+  const navigation = useNavigation();
+  const goToHome = () =>
+    navigation.navigate("Tab");
+
   return (
     <Container>
       <View style={styles.container}>
-        <BG source={require('./image/임시로고.png')}></BG>
+        <BG source={require('../image/임시로고.png')}></BG>
         <View style={styles.form}>
             <View style={styles.formElement}>
                 <TextInput
@@ -53,10 +55,10 @@ export default function Login() {
             </View>
         </View>
         <TouchableOpacity style={styles.buttonStyle}>
-            <Text style={{color:'white'}}>로그인</Text>
+            <Text style={{color:'white'}} onPress={goToHome}>로그인</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonStyle}>
-            <Text style={{color:'white'}}>회원가입</Text>
+            <Text style={{color:'white'}} onPress={goToHome}>회원가입</Text>
         </TouchableOpacity>
         
         <View style={styles.find}>

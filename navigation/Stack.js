@@ -1,6 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Tabs from "./Tabs";
+import Login from "./Login";
 
 const Stack = createStackNavigator();
 
@@ -17,6 +18,7 @@ export default () => (
       headerBackTitleVisible: false
     }}
      >
+    <Stack.Screen name="Login" component={Login} />
     <Stack.Screen name="Tab" component={Tabs} />
   </Stack.Navigator>
 );
