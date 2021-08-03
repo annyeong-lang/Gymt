@@ -46,14 +46,14 @@ export default () => (
         <AntDesign name="star" size={20} color="rgb(255, 194, 81)" />
         <Title title={"관심 체육관"} />
       </Container>
-      <BG source={require('../../image/나주시실내체육관.png')} />
+      <BG source={'https://www.phsisul.org/File/Download/a13a0a4d7fe11880a27a3cee83f239fd'} />
       <Interested_content>
-        <SemiTitle>전라남도 나주시 실내 체육관</SemiTitle>
-        <TextBox><FontAwesome name="map-marker" size={18} color="black" /><Text>전남 나주시 구진포로 519</Text></TextBox>
-        <TextBox><FontAwesome name="phone" size={18} color="black" /><Text>016-330-8847</Text></TextBox>
-        <TextBox><AntDesign name="clockcircle" size={15} color="black" /><Text>06:00 ~ 22:00</Text></TextBox>
-        <TextBox><Feather name="check-square" size={15} color="black" /><Text>배드민턴, 족구, 배구</Text></TextBox>
-        <TextBox><FontAwesome name="won" size={15} color="black" /><Text>유료</Text></TextBox>
+        <SemiTitle>경상북도 포항시 오천체육문화타운</SemiTitle>
+        <TextBox><FontAwesome name="map-marker" size={18} color="black" /><Text>경북 포항시 남구 냉천로 580</Text></TextBox>
+        <TextBox><FontAwesome name="phone" size={18} color="black" /><Text>054-280-9525</Text></TextBox>
+        <TextBox><AntDesign name="clockcircle" size={15} color="black" /><Text>07:00 ~ 23:00</Text></TextBox>
+        <TextBox><Feather name="check-square" size={15} color="black" /><Text>배드민턴, 탁구, 농구, 축구, 풋살</Text></TextBox>
+        <TextBox><FontAwesome name="won" size={15} color="black" /><Text>부분 유료</Text></TextBox>
       </Interested_content>
     </div>
   );

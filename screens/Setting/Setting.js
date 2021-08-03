@@ -93,27 +93,30 @@ export default function Settings() {
                 onValueChange={(itemValue) =>
                   setSelectedCity(itemValue)
                 }>
-                <Picker.Item label="광양시" value="광양시" />
-                <Picker.Item label="여주시" value="여주시" />
+                <Picker.Item label="영천시" value="영천시" />
+                <Picker.Item label="포항시" value="포항시" />
+                <Picker.Item label="구미시" value="구미시" />
               </Picker>
+              {/* 
               <Picker
                 style={LocationCondition? styles.focusedPicker : styles.picker}
                 selectedValue={selectedGun}
                 onValueChange={(itemValue) =>
                   setSelectedGun(itemValue)
                 }>
-                <Picker.Item label="진도군" value="여주시" />
+                <Picker.Item label="성주군" value="성주군" />
                 <Picker.Item label="장흥군" value="장흥군" />
               </Picker>
+              */}
               <Picker
                 style={LocationCondition? styles.focusedPicker : styles.picker}
                 selectedValue={selectedDo}
                 onValueChange={(itemValue) =>
                   setSelectedDo(itemValue)
                 }>
-                <Picker.Item label="하당동" value="하당동" />
-                <Picker.Item label="여청동" value="여청동" />
-                <Picker.Item label="쌍봉동" value="쌍봉동" />
+                <Picker.Item label="광평동" value="광평동" />
+                <Picker.Item label="공단동" value="공단동" />
+                <Picker.Item label="구포동" value="구포동" />
               </Picker>
             </View>
           </View>
@@ -129,7 +132,7 @@ export default function Settings() {
           </PostColumn>
           <PostColumn>
             <Text style={styles.numColumn}>1</Text>
-            <Text>나주 피트니스에서 농구 같이 하실 분!</Text>
+            <Text>오천체육문화타운에서 농구 같이 하실 분!</Text>
           </PostColumn>
         </PostBox>
       </MyPost>
