@@ -8,6 +8,9 @@ import Setting from "../screens/Setting/Setting";
 import { Platform } from "react-native";
 import { Entypo } from '@expo/vector-icons';
 
+//테스트용
+import Login from "../Login";
+
 const Tabs = createBottomTabNavigator();
 
 const getHeaderName = route =>
@@ -54,8 +57,8 @@ export default ({ navigation, route }) => {
         },
         style: {
           height:65,
-          backgroundColor: 'rgba(219, 178, 255, 1)',
-          borderTopColor: "rgba(219, 178, 255, 1)"
+          backgroundColor: 'rgba(12, 144, 125, 1)',
+          borderTopColor: "rgba(12, 144, 125, 1)"
         }
       }}
     >

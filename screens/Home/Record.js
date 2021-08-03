@@ -94,7 +94,7 @@ export default function Record() {
       <View style={styles.container}>
         <TouchableOpacity onPress={() => setIsAddMode(true)} >
           <PlusIcon>
-              <AntDesign name="pluscircle" size={36} color="rgb(3, 218, 197)" />
+              <AntDesign name="pluscircle" size={36} color="rgb(236, 159, 87)" />
           </PlusIcon>
         </TouchableOpacity>
       </View>
