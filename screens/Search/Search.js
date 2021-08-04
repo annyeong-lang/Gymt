@@ -8,7 +8,7 @@ import ScrollContainer from "../../components/ScrollContainer";
 export default () => (
   <ScrollContainer>
     <Athlete></Athlete>
-    {/* <Location></Location>
-    <SearchButt></SearchButt> */}
+    <Location></Location>
+    <SearchButt></SearchButt>
   </ScrollContainer>
 );
