@@ -6,16 +6,18 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { BorderlessButton } from "react-native-gesture-handler";
 import { MaterialIcons } from '@expo/vector-icons';
 import SearchResult from './SearchResult'
+import { Link } from 'react-router-dom'
 
 export default function SearchButt(){
     return(
         <View style= {styles.container}>
             <Text style={styles.title}>
             </Text>
+        {/* <Link to="./SearchResult"> */}
         <TouchableOpacity style={styles.buttonStyle}>
-        {/* <Button href="SearchResult" title="체육관 검색"/> */}
         <Text >체육관 검색</Text>
         </TouchableOpacity>
+        {/* </Link> */}
         </View>
     );
 }
