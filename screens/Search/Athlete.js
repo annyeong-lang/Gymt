@@ -64,11 +64,11 @@ function Separator(){
 export default function App(){
     return(
         <View style= {styles.container}>
-            <Text>
+            <Text style={styles.title}>
             <MaterialIcons name="sports" size={24} color="black" />
             <Text>종목별 체육관 찾기</Text>
             </Text>
-        <Button title="축구" color="#f2c2c2c"/>
+        <Button title="축구"/>
         </View>
     );
 }
