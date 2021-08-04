@@ -20,5 +20,6 @@ export default () => (
      >
     <Stack.Screen name="Login" component={Login} />
     <Stack.Screen name="Tab" component={Tabs} />
+    
   </Stack.Navigator>
 );
