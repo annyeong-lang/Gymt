@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components/native";
 import Title from "../../components/Title";
+import { Button,TouchableOpacity } from "react-native";
 import { AntDesign, FontAwesome, Feather } from '@expo/vector-icons';
+import Search from '../Search/Search';
+import { useNavigation } from "@react-navigation/native";
 
 // const { width: WIDTH } = Dimensions.get("window");
 
@@ -38,9 +41,20 @@ const Result_content = styled.View`
     margin-bottom: 20px;
 `;
 
-export default function SearchResult(){
+
+
+export default function SearchResult({history}){
+  const navigation = useNavigation();
+  // const goBack= () =>{
+  //   history.goBack();
+  // };
   return(
     <div>
+      {/* <Container>
+      {/* <Button onPress={() => navigation.navigate("Search")} title="다시 검색"> */}
+      {/* <Button onClick={goBack} title="다시 검색"> */}
+        {/* </Button> */}
+      {/* </Container> */}
       <Container>
         <AntDesign name="rightcircle" size={20} color="black" />
         <Title title={"체육관 결과"} />
