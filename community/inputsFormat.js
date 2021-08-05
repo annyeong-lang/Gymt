@@ -7,10 +7,10 @@ import {
  
 } from 'native-base';
 import React ,{useState}from 'react';
-import Selects from "./selected"
+import Selects from "./selects"
 
  
-export default function Inputs ({data,handleSelect,handle,title,id,submit,contents}) {
+export default function Inputs ({sports,location,handleSelect,handle,title,id,submit,contents}) {
  
  const time=new Date().toLocaleDateString();
   const sp=["골프","배드민턴","농구","축구","야구","배구"]
@@ -19,8 +19,8 @@ export default function Inputs ({data,handleSelect,handle,title,id,submit,conten
   return (
       <Center>
       <VStack width="80%" space={1}>
-      <Selects label="종목" item={data.sports}  arr={sp} handle={handleSelect} />
-      <Selects label="위치" item={data.location} arr={lo} handle={handleSelect} />
+      <Selects label="종목" item={sports}  arr={sp} handle={handleSelect} />
+      <Selects label="위치" item={location} arr={lo} handle={handleSelect} />
       <HStack pl={3}space={3}>
       <Center>id</Center> 
       <Input  
@@ -45,7 +45,7 @@ export default function Inputs ({data,handleSelect,handle,title,id,submit,conten
                 value={contents}
                 onChange={handle}/>
       <Center>{time}</Center>
-      <Button  onPress={submit}>작성</Button>
+      <Button  onPress={submit}></Button>
       </VStack>
       </Center>
   )
