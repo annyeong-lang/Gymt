@@ -51,10 +51,10 @@ export default function SearchResult({history}){
   return(
     <div>
       {/* <Container>
-      {/* <Button onPress={() => navigation.navigate("Search")} title="다시 검색"> */}
-      {/* <Button onClick={goBack} title="다시 검색"> */}
-        {/* </Button> */}
-      {/* </Container> */}
+      <Button onPress={() => navigation.navigate("Search")} title="다시 검색">
+      <Button onClick={goBack} title="다시 검색">
+        </Button>
+      </Container> */}
       <Container>
         <AntDesign name="rightcircle" size={20} color="black" />
         <Title title={"체육관 결과"} />
