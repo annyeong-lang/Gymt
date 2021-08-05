@@ -11,9 +11,9 @@ import { useNavigation } from "@react-navigation/native";
 
 
 export default function SearchButt(){
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
   // const goToResult = () =>
-    // navigation.navigate("SearchResult");
+  //   navigation.navigate("SearchResult");
   // function goToResult(e) {
   //   window.location.replace("./SearchResult");
   // }
@@ -24,7 +24,7 @@ export default function SearchButt(){
             <Text style={styles.title}>
             </Text>
         {/* <Link to="./SearchResult"> */}
-        <TouchableOpacity style={styles.buttonStyle}>
+        <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('SearchResult')}>
         <Link to="./SearchResult" >체육관 검색</Link>
         </TouchableOpacity>
         {/* </Link> */}

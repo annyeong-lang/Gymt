@@ -21,6 +21,6 @@ export default () => (
      >
     <Stack.Screen name="Login" component={Login} />
     <Stack.Screen name="Tab" component={Tabs} />
-    <Stack.Screen name="SearchResult" component={SearchResult} />
+    {/* <Stack.Screen name="SearchResult" component={SearchResult} /> */}
   </Stack.Navigator>
 );
