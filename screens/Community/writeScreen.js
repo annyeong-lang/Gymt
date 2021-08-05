@@ -65,11 +65,13 @@ import {
     
     return(
       <NativeBaseProvider>
+          <Center mt={10}>
       <Inputs data={obj}
               handle={handle}
               handleSelects={handleSelects}
              submit={submit}
                 />
+            </Center>
         </NativeBaseProvider>
     )
     
