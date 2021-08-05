@@ -6,25 +6,30 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { BorderlessButton } from "react-native-gesture-handler";
 import { MaterialIcons } from '@expo/vector-icons';
 import SearchResult from './SearchResult'
-import { Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import { useNavigation } from "@react-navigation/native";
 
 
 export default function SearchButt(){
-  const navigation = useNavigation();
-  const goToResult = () =>
-    navigation.navigate("SearchResult");
+  // const navigation = useNavigation();
+  // const goToResult = () =>
+    // navigation.navigate("SearchResult");
+  function goToResult(e) {
+    window.location.replace("./SearchResult");
+  }
 
     return(
+      <Router>
         <View style= {styles.container}>
             <Text style={styles.title}>
             </Text>
         {/* <Link to="./SearchResult"> */}
         <TouchableOpacity onPress={goToResult} style={styles.buttonStyle}>
-        <Text >체육관 검색</Text>
+        <Link to="/SearchResult" >체육관 검색</Link>
         </TouchableOpacity>
         {/* </Link> */}
         </View>
+        </Router>
     );
 }
 

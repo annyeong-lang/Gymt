@@ -39,10 +39,10 @@ const Interested_content = styled.View`
     margin-bottom: 20px;
 `;
 
-export default function SearchResult(){
+export default () => {
     <div>
       <Container>
-        <AntDesign name="star" size={20} color="rgb(255, 194, 81)" />
+        <AntDesign name="rightcircle" size={20} color="rgb(255, 194, 81)" />
         <Title title={"체육관 결과"} />
       </Container>
       <BG source={'https://www.phsisul.org/File/Download/a13a0a4d7fe11880a27a3cee83f239fd'} />
