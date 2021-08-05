@@ -18,12 +18,12 @@ const BG = styled.Image`
 `;
 
 export default function RecordItem(props) {
-  const ImageList = ['basketball.png', 'bicycle.png', 'ping-pong.png', 'baseball.png', 'soccer.png', 'tennis.png']
+  const ImageList = [require('../../image/basketball.png'), require('../../image/bicycle.png'), require('../../image/ping-pong.png'), require('../../image/baseball.png'), require('../../image/soccer.png'), require('../../image/tennis.png')]
   return (
     <>
       <Health_record>
         <div style={{display:'flex', width: '85%', flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
-          <BG source={require(`../../image/${ImageList[props.iconId-1]}`)} />
+          <BG source={ImageList[props.iconId-1]} />
           <span>{props.startHour}:{props.startMin} - {props.endHour}:{props.endMin}</span>
           <span>{props.total}시간</span>
         </div>

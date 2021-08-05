@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: 190,
     height: 190,
-    borderRadius: '50%',
+    borderRadius: 100,
     backgroundColor: 'rgb(240, 240, 240)'
   }
 });
