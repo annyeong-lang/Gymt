@@ -15,8 +15,8 @@ export default function Selects({label,item,arr,handle}){
           value={item}
           width="40%"
           minWidth={20}
-          placeholder="ㅇ"
-          onValueChange={(itemValue)=>handle(label,itemValue)}
+          placeholder=""
+          onChange={(itemValue)=>handle(label,itemValue)}
           mt={1}
         >{arr.map((cur)=>(
           <Select.Item label={cur} value={cur} />

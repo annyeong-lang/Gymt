@@ -2,6 +2,7 @@ import React,{useState} from "react"
 import {Center,Input,Icon,IconButton,Text,HStack,VStack,Box,Divider,NativeBaseProvider} from "native-base"
 import { MaterialIcons, Ionicons } from "@expo/vector-icons"
 import { FontAwesome } from '@expo/vector-icons';
+import { ScrollView } from "react-native-gesture-handler";
 
 export default function PostingScreen(){
    const [newComment,setNewComment]=useState("")
@@ -92,7 +93,9 @@ export default function PostingScreen(){
 }
    return (
     <NativeBaseProvider>
+        <ScrollView>
     <EachPosting info={info} />
+    </ScrollView>
     </NativeBaseProvider>
   );
 }

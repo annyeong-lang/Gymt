@@ -17,7 +17,7 @@ import {
     const lo=["포항시","경주시","김천시","안동시","구미시","영주시"]
   
     return (
-        <Center>
+        <Center mt={10}>
         <VStack width="80%" space={1}>
         <Selects label="종목" item={sports}  arr={sp} handle={handleSelect} />
         <Selects label="위치" item={location} arr={lo} handle={handleSelect} />
@@ -45,7 +45,7 @@ import {
                   value={contents}
                   onChange={handle}/>
         <Center>{time}</Center>
-        <Button  onPress={submit}></Button>
+        <Button  onPress={submit} bg="purple.300" _text={{color:"white"}}>작성</Button>
         </VStack>
         </Center>
     )

@@ -6,6 +6,7 @@ import {
     NativeBaseProvider,Select,Text
   } from 'native-base';
   import React ,{useState,useEffect}from 'react';
+import { ScrollView } from 'react-native-gesture-handler';
   import Inputs from "./inputFormat"
   
   export default function WritingScreen({navigation})
@@ -65,13 +66,13 @@ import {
     
     return(
       <NativeBaseProvider>
-          <Center mt={10}>
+         <ScrollView>
       <Inputs data={obj}
               handle={handle}
               handleSelects={handleSelects}
              submit={submit}
                 />
-            </Center>
+           </ScrollView> 
         </NativeBaseProvider>
     )
     
