@@ -12,9 +12,7 @@ export default function App(){
      <NavigationContainer>
      <Stack.Navigator
            screenOptions={
-            headerShown : false
-           }
-      >
+            {headerShown : false}} >
     <Stack.Screen name="h" component={CommunityHomeScreen} />
     <Stack.Screen name="wh" component={PostingScreen} /> 
     <Stack.Screen name="w" component={WritingScreen} />   
