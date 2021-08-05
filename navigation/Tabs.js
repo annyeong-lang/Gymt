@@ -2,7 +2,7 @@ import React, { useLayoutEffect } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import Home from "../screens/Home/Home";
-import Search from "../screens/Search/Search";
+import SearchGym from "../screens/Search/SearchGym";
 import Community from "../screens/Community/Community";
 import Setting from "../screens/Setting/Setting";
 import { Platform } from "react-native";
@@ -60,7 +60,7 @@ export default ({ navigation, route }) => {
       }}
     >
       <Tabs.Screen name="홈 화면" component={Home} />
-      <Tabs.Screen name="체육관 찾기" component={Search} />
+      <Tabs.Screen name="체육관 찾기" component={SearchGym} />
       <Tabs.Screen name="커뮤니티" component={Community}/>
       <Tabs.Screen name="내 정보" component={Setting}/>
     </Tabs.Navigator>

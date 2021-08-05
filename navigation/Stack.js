@@ -2,7 +2,6 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Tabs from "./Tabs";
 import Login from "./Login";
-import SearchResult from "../screens/SearchResult/SearchResult";
 
 const Stack = createStackNavigator();
 
@@ -21,6 +20,5 @@ export default () => (
      >
     <Stack.Screen name="Login" component={Login} />
     <Stack.Screen name="Tab" component={Tabs} />
-    <Stack.Screen name="SearchResult" component={SearchResult} />
   </Stack.Navigator>
 );
