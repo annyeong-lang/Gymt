@@ -39,7 +39,7 @@ const Interested_content = styled.View`
     margin-bottom: 20px;
 `;
 
-export default () => (
+export default function SearchResult(){
     <div>
       <Container>
         <AntDesign name="star" size={20} color="rgb(255, 194, 81)" />
@@ -56,4 +56,4 @@ export default () => (
       </Interested_content>
     </div>
     
-  );
+  };
