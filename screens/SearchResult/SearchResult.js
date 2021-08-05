@@ -39,6 +39,7 @@ const Result_content = styled.View`
 `;
 
 export default function SearchResult(){
+  return(
     <div>
       <Container>
         <AntDesign name="rightcircle" size={20} color="black" />
@@ -54,4 +55,6 @@ export default function SearchResult(){
         <TextBox><FontAwesome name="won" size={15} color="black" /><Text>부분 유료</Text></TextBox>
       </Result_content>
     </div>
+  );
+    
   };

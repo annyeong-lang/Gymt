@@ -11,6 +11,5 @@ export default () => (
     <Athlete></Athlete>
     <Location></Location>
     <SearchButt></SearchButt>
-    {/* <SearchResult></SearchResult> */}
   </ScrollContainer>
 );
