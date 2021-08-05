@@ -5,7 +5,7 @@ import Title from "../../components/Title";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { BorderlessButton } from "react-native-gesture-handler";
 import { MaterialIcons } from '@expo/vector-icons';
-import SearchResult from './SearchResult'
+import SearchResult from '../SearchResult/SearchResult'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import { useNavigation } from "@react-navigation/native";
 
@@ -13,7 +13,7 @@ import { useNavigation } from "@react-navigation/native";
 export default function SearchButt(){
   const navigation = useNavigation();
   // const goToResult = () =>
-  //   navigation.navigate("SearchResult");
+    // navigation.navigate("SearchResult");
   // function goToResult(e) {
   //   window.location.replace("./SearchResult");
   // }

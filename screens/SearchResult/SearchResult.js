@@ -41,7 +41,7 @@ const Result_content = styled.View`
 export default function SearchResult(){
     <div>
       <Container>
-        <AntDesign name="rightcircle" size={20} color="rgb(255, 194, 81)" />
+        <AntDesign name="rightcircle" size={20} color="black" />
         <Title title={"체육관 결과"} />
       </Container>
       <BG source={'https://www.phsisul.org/File/Download/a13a0a4d7fe11880a27a3cee83f239fd'} />
