@@ -98,21 +98,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: 190,
     height: 190,
-    borderRadius: '50%'
+    borderRadius: 100
   },
   temp: {
     fontSize: 20,
-    fontWeight: 800,
+    fontWeight: "800",
     color: 'white'
   },
   title: {
     marginRight: 5,
-    fontWeight: 600,
+    fontWeight: "600",
     color: 'white'
   },
   humidity: {
     marginRight: 5,
-    fontWeight: 600,
+    fontWeight: "600",
     marginBottom: 20,
     color: 'white'
   }

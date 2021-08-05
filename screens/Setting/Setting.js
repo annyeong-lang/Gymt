@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     width: '20%'
   },
   semiTitle: {
-    fontWeight: 600,
+    fontWeight: "600",
     margin: 15,
     fontSize: 20
   },
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   formLabel: {
-    fontWeight: 600,
+    fontWeight: "600",
     display:'flex',
     alignItems: 'center'
   },

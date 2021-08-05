@@ -27,15 +27,15 @@ const Container = styled.View`
 const nowContest = [
   {
     url : 'http://dangdangtrekking.com/',
-    imageTitle : '댕댕트레킹_2021_9월_11일.jpg'
+    imageTitle : require('../../image/댕댕트레킹_2021_9월_11일.jpg')
   },
   {
     url : 'http://bbangrun.com/',
-    imageTitle : '빵빵런_2021_9월1일.jpg'
+    imageTitle : require('../../image/빵빵런_2021_9월1일.jpg')
   },
   {
     url : 'http://www.2021pjsports.kr/sports-all-festival',
-    imageTitle: '경기도생활체육대축전_2021_9월10일.jpg'
+    imageTitle: require('../../image/경기도생활체육대축전_2021_9월10일.jpg')
   }
 ];
 

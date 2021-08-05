@@ -7,7 +7,7 @@ const Container = styled.View`
   padding: 0 20px;
   background-color: rgba(12, 144, 125, 1);
   width: 100%;
-  dislpay: flex;
+  display: flex;
   flex-direction: column;
   align-items: center
   height: 100%;
@@ -38,7 +38,6 @@ export default function Login() {
                 onChangeText={setUsername}
                 style={styles.formInput}
                 placeholder="Email address"
-                autoCapitalize="none"
                 autoCorrect={false}
                 />
             </View>
@@ -48,7 +47,6 @@ export default function Login() {
                 onChangeText={setPassword}
                 placeholder="Password"
                 style={styles.formInput}
-                autoCapitalize="Password"
                 autoCorrect={false}
                 secureTextEntry={true}
                 />
@@ -105,8 +103,8 @@ const styles = StyleSheet.create({
       minWidth: 200,
       marginBottom: 5,
       height: 40,
-      textAlign: 'center',
-      dlsplay: 'flex',
+      display: 'flex',
+      alignItems: 'center',
       justifyContent: 'center',
       borderWidth: 2,
       borderColor: "black",
