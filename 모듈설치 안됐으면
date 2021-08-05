@@ -1,0 +1,5 @@
+npm install native-base styled-components styled-system
+expo install react-native-svg
+expo install react-native-safe-area-context
+
+이거 설치해야해요
