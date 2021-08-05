@@ -6,7 +6,7 @@ import {
     NativeBaseProvider,Select,Text
   } from 'native-base';
   import React ,{useState,useEffect}from 'react';
-  import Inputs from "./inputss"
+  import Inputs from "./inputFormat"
   
   export default function WritingScreen({navigation})
   {

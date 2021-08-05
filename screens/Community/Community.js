@@ -3,21 +3,21 @@ import React from "react"
 import {Center,Input,Icon,IconButton,Text,HStack,VStack,Box,Divider,NativeBaseProvider} from "native-base"
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
- const Stack=createStackNavigator();
+import CommunityHomeScreen from "./communityhomeScreen";
+import PostingScreen from "./postingScreen";
+import WritingScreen from "./writeScreen";
+ const Stacks=createStackNavigator();
 export default function App(){
  
   return(
-   
-     <NavigationContainer>
-     <Stack.Navigator
+     <Stacks.Navigator
            screenOptions={
             {headerShown : false}} >
-    <Stack.Screen name="h" component={CommunityHomeScreen} />
-    <Stack.Screen name="wh" component={PostingScreen} /> 
-    <Stack.Screen name="w" component={WritingScreen} />   
-     </Stack.Navigator>
-     </NavigationContainer>
+    <Stacks.Screen name="h" component={CommunityHomeScreen} />
+    <Stacks.Screen name="wh" component={PostingScreen} /> 
+    <Stacks.Screen name="w" component={WritingScreen} />   
+     </Stacks.Navigator>
+  
   
   )
 }
