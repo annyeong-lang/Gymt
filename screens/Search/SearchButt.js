@@ -14,9 +14,9 @@ export default function SearchButt(){
   // const navigation = useNavigation();
   // const goToResult = () =>
     // navigation.navigate("SearchResult");
-  function goToResult(e) {
-    window.location.replace("./SearchResult");
-  }
+  // function goToResult(e) {
+  //   window.location.replace("./SearchResult");
+  // }
 
     return(
       <Router>
@@ -24,8 +24,8 @@ export default function SearchButt(){
             <Text style={styles.title}>
             </Text>
         {/* <Link to="./SearchResult"> */}
-        <TouchableOpacity onPress={goToResult} style={styles.buttonStyle}>
-        <Link to="/SearchResult" >체육관 검색</Link>
+        <TouchableOpacity style={styles.buttonStyle}>
+        <Link to="./SearchResult" >체육관 검색</Link>
         </TouchableOpacity>
         {/* </Link> */}
         </View>
