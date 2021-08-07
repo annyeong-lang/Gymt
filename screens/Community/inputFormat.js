@@ -2,11 +2,9 @@ import {
     VStack,
     Input,Center,
     Button,HStack,
-    FormControl,TextArea, 
-    NativeBaseProvider,Select,Text,extendTheme
-   
+    TextArea
   } from 'native-base';
-  import React ,{useState}from 'react';
+  import React from 'react';
   import Selects from "./selects"
   
    

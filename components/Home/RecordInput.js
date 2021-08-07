@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import styled from "styled-components/native";
 import Modal from 'react-native-modal'
-import PropTypes from 'prop-types';
-
 
 const Text = styled.Text``;
 

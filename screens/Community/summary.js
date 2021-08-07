@@ -2,9 +2,6 @@ import {Box,Text,VStack,HStack,Center,Icon} from "native-base"
 import React from "react"
 import { Ionicons } from '@expo/vector-icons'; 
 
-
-
-
 export default function Summary ({sports,location,id,comments,title,date,looks})
 {
   function Keywords({item}){

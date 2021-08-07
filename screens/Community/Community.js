@@ -1,7 +1,5 @@
 import React from "react"
 
-import {Center,Input,Icon,IconButton,Text,HStack,VStack,Box,Divider,NativeBaseProvider} from "native-base"
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import CommunityHomeScreen from "./communityhomeScreen";
 import PostingScreen from "./postingScreen";

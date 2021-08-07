@@ -1,9 +1,5 @@
 import React from "react";
-import { Dimensions, StyleSheet, Text, View, Button } from "react-native";
-import styled from "styled-components/native";
-import Title from "../../components/Title";
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { BorderlessButton } from "react-native-gesture-handler";
+import {  StyleSheet, Text, View, Button } from "react-native";
 import { MaterialIcons } from '@expo/vector-icons';
 
 export default function Athlete(){

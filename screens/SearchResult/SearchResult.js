@@ -1,9 +1,7 @@
-import React, {useEffect} from "react";
+import React from "react";
 import styled from "styled-components/native";
 import Title from "../../components/Title";
-import { Button,TouchableOpacity } from "react-native";
 import { AntDesign, FontAwesome, Feather } from '@expo/vector-icons';
-import Search from '../Search/Search';
 import { useNavigation } from "@react-navigation/native";
 
 // const { width: WIDTH } = Dimensions.get("window");

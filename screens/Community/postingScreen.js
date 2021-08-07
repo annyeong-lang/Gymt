@@ -1,6 +1,5 @@
 import React,{useState} from "react"
 import {Center,Input,Icon,IconButton,Text,HStack,VStack,Box,Divider,NativeBaseProvider} from "native-base"
-import { MaterialIcons, Ionicons } from "@expo/vector-icons"
 import { FontAwesome } from '@expo/vector-icons';
 import { ScrollView } from "react-native-gesture-handler";
 
@@ -73,19 +72,19 @@ export default function PostingScreen(){
             }
           })
         }
-          <Input placeholder="댓글을 입력하세요"
-                 mt={1}
-                 value={newComment}
-                 onChange={(e)=>setNewComment(e.target.value)}
-                 InputRightElement={
-                   <IconButton variant="solid"  
-                              onPress={submit}  
-                               icon={
-                                 <Icon size="sm" as={<FontAwesome name="send" size={24} />} color="white" />
-                               }
-                               bg="purple.300" />
-                 }
-               ></Input>
+        <Input placeholder="댓글을 입력하세요"
+            mt={1}
+            value={newComment}
+            onChange={(e)=>setNewComment(e.target.value)}
+            InputRightElement={
+              <IconButton variant="solid"  
+                  onPress={submit}  
+                    icon={
+                      <Icon size="sm" as={<FontAwesome name="send" size={24} />} color="white" />
+                    }
+                    bg="purple.300" />
+            }
+        ></Input>
         </VStack>
         </VStack>
     </Center>

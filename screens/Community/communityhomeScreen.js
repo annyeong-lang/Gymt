@@ -1,14 +1,13 @@
-import React ,{useState,useEffect} from "react"
+import React ,{ useState } from "react"
 import SearchBar from "./searchBar"
 import Summary from "./summary"
-import {VStack,NativeBaseProvider,Center,ScrollView,Button,Fab, Icon, Box} from "native-base"
+import {NativeBaseProvider,Center,ScrollView,Button,Fab, Icon, Box} from "native-base"
 import { TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons"
 
 export default function CommunityHomeScreen({navigation}){
   const [word,setWord]=useState("");
   const [list,setList]=useState(Plists);
-  const [yes,setYes]=useState(true);
 
   const filtering = (e)=>{
     const filtered = Plists.filter((cur)=>{return cur.sports.includes(e)||cur.location.includes(e)})

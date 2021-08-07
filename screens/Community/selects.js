@@ -1,8 +1,7 @@
-import React,{useState} from "react"
+import React from "react"
 import {
-  Select,Text,
-  HStack,FormControl,Center,
-  NativeBaseProvider,
+  Select,
+  HStack, Center  
 } from "native-base"
 //item :종목,위치
 

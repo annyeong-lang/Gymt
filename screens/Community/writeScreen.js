@@ -1,15 +1,9 @@
-import {
-    VStack,
-    Input,Center,
-    Button,HStack,
-    FormControl,
-    NativeBaseProvider,Select,Text
-  } from 'native-base';
-  import React ,{useState,useEffect}from 'react';
+import { NativeBaseProvider } from 'native-base';
+import React, { useState } from 'react';
 import { ScrollView } from 'react-native-gesture-handler';
-  import Inputs from "./inputFormat"
+import Inputs from "./inputFormat"
   
-  export default function WritingScreen({navigation})
+export default function WritingScreen({navigation})
   {
     const obj={
       sports :"",
@@ -19,8 +13,6 @@ import { ScrollView } from 'react-native-gesture-handler';
       title :"",
       contents:""
     }
-    let time;
-    var check=false;
   
     const [sports,setSports]=useState("");
     const [location,setLocation]=useState("");

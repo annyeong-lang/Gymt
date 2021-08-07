@@ -1,11 +1,8 @@
 //날씨 정보
 import React from "react";
-import { Dimensions } from "react-native";
 import styled from "styled-components/native";
 import Title from "../../components/Title";
 import { AntDesign, FontAwesome, Feather } from '@expo/vector-icons';
-
-const { width: WIDTH } = Dimensions.get("window");
 
 const TextBox = styled.Text`
     display: flex;
