@@ -1,5 +1,5 @@
 import React ,{ useState } from "react"
-import SearchBar from "./searchBar"
+import SearchBar from "../../components/community/searchBar"
 import Summary from "./summary"
 import {NativeBaseProvider,Center,ScrollView,Button,Fab, Icon, Box} from "native-base"
 import { TouchableOpacity } from "react-native";

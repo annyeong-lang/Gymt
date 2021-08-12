@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import Home from "../screens/Home/Home";
 import SearchGym from "../screens/Search/SearchGym";
-import Community from "../screens/Community/Community";
+import Community from "./Community";
 import Setting from "../screens/Setting/Setting";
 import { Platform } from "react-native";
 import { Entypo } from '@expo/vector-icons';

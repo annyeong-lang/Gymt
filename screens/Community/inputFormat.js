@@ -5,7 +5,7 @@ import {
     TextArea
   } from 'native-base';
   import React from 'react';
-  import Selects from "./selects"
+  import Selects from "../../components/community/selects"
   
    
   export default function Inputs ({sports,location,handleSelect,handle,title,id,submit,contents}) {

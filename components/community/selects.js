@@ -3,7 +3,7 @@ import {
   Select,
   HStack, Center  
 } from "native-base"
-//item :종목,위치
+
 
 export default function Selects({label,item,arr,handle}){
  
