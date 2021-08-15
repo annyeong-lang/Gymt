@@ -6,6 +6,7 @@ const Text = styled.Text`
   color: black;
   font-weight: bold;
   font-size: 16px;
+  font-Family:'SCDream';
 `;
 
 const Title = ({ title }) => <Text>{title}</Text>;

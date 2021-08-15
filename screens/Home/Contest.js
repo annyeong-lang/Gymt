@@ -25,6 +25,7 @@ const Title = styled.Text`
   color: black;
   font-weight: bold;
   font-size: 16px;
+  font-Family: 'SCDream';
 `;
 const Container = styled.View`
   padding: 0 20px;
@@ -68,7 +69,7 @@ export default function Contest ({ loading }) {
           <Container>
             <Title><FontAwesome name="flag" size={24} color="green" />  대회 정보</Title>
             <TouchableOpacity onPress={() => {navigation.navigate('MoreContest')}}>
-              <Text style={{fontWeight: '600', fontSize:14}}> 더 많은 대회 보기 <AntDesign name="rightcircle" size={14} color="black" /> </Text>
+              <Text style={{fontWeight: '600', fontSize:14, fontFamily:'SCDream'}}> 더 많은 대회 보기 <AntDesign name="rightcircle" size={14} color="black" /> </Text>
             </TouchableOpacity>
           </Container>
           <SliderContainer>

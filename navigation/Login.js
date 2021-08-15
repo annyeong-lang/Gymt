@@ -3,8 +3,8 @@ import { TextInput, StyleSheet, View, TouchableOpacity, Text, Image } from "reac
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from '@expo/vector-icons';
+import { useFonts } from 'expo-font';
 
-//디자인 수정 예정 ^^
 const Background = styled.Image`
   width: 100%;
   height: 100%;
@@ -37,7 +37,14 @@ export default function Login() {
   const navigation = useNavigation();
   const goToHome = () =>
     navigation.navigate("Tab");
-
+  
+  //font
+  const [loaded] = useFonts({
+    SCDream: require('../assets/fonts/SCDream3.otf'),
+  });
+  if (!loaded) {
+    return null;
+  }
   return (
     <Container>
       <Background source={require('../image/배경.png')}></Background>
@@ -66,7 +73,7 @@ export default function Login() {
             </View>
           </View>
           <TouchableOpacity style={styles.buttonStyle}>
-              <Text style={{color:'white'}} onPress={goToHome}>로그인</Text>
+              <Text style={{color:'white', fontFamily: 'SCDream'}} onPress={goToHome}>로그인</Text>
           </TouchableOpacity>     
           <View style={styles.find}>
               <TouchableOpacity>

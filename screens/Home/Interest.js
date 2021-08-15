@@ -1,5 +1,6 @@
 //날씨 정보
 import React from "react";
+import {View} from "react-native";
 import styled from "styled-components/native";
 import Title from "../../components/Title";
 import { AntDesign, FontAwesome, Feather } from '@expo/vector-icons';
@@ -10,11 +11,15 @@ const TextBox = styled.Text`
 `;
 const Text = styled.Text`
     margin-left: 5px;
+    font-size: 13px;
+    font-Family:'SCDream';
 `;
 
 const SemiTitle = styled.Text`
     font-weight: 600;
     margin-bottom: 5px;
+    font-Family:'SCDream';
+
 `;
 const Container = styled.View`
   padding: 0 20px;
@@ -38,7 +43,7 @@ const Interested_content = styled.View`
 `;
 
 export default () => (
-    <div>
+    <View>
       <Container>
         <AntDesign name="star" size={20} color="rgb(255, 194, 81)" />
         <Title title={"관심 체육관"} />
@@ -52,5 +57,5 @@ export default () => (
         <TextBox><Feather name="check-square" size={15} color="black" /><Text>배드민턴, 탁구, 농구, 축구, 풋살</Text></TextBox>
         <TextBox><FontAwesome name="won" size={15} color="black" /><Text>부분 유료</Text></TextBox>
       </Interested_content>
-    </div>
+    </View>
   );

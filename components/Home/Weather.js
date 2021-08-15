@@ -6,7 +6,7 @@ import Title from "../Title";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Border from "./Border";
 import { LinearGradient } from "expo-linear-gradient";
-import { backgroundColor } from "styled-system";
+import { useFonts } from 'expo-font';
 
 const Container = styled.View`
   padding: 0 20px;
@@ -73,7 +73,14 @@ const weatherOptions = {
   }
 };
 
-export default ({ temp, condition, humidity }) => (
+export default function Weather ({ temp, condition, humidity }) {
+  const [loaded] = useFonts({
+    SCDream: require('../../assets/fonts/SCDream3.otf'),
+  });
+  if (!loaded) {
+    return null;
+  }
+  return(
   <>
     <Container>
       <MaterialCommunityIcons name="weather-sunny" size={24} color="orange" />
@@ -97,13 +104,14 @@ export default ({ temp, condition, humidity }) => (
           <Text style={styles.humidity}>습도: {humidity}</Text>
         </View>
         <View style={styles.weatherMessage}>
-          <Text style={{fontWeight: 900}}>{weatherOptions[condition].comment}</Text>
+          <Text style={{fontWeight: '900', fontFamily:'SCDream'}}>{weatherOptions[condition].comment}</Text>
         </View>
       </LinearGradient>
     </Weather_container>
     <Border/>
   </>
-);
+  );
+}
 
 
 const styles = StyleSheet.create({
@@ -119,18 +127,21 @@ const styles = StyleSheet.create({
   //온도 날씨 습도
   temp: {
     fontSize: 18,
+    fontFamily:'SCDream',
     fontWeight: "800",
     color: 'white'
   },
   title: {
     fontSize: 12,
     marginRight: 5,
+    fontFamily:'SCDream',
     fontWeight: "600",
     color: 'white'
   },
   humidity: {
     fontSize: 12,
     marginRight: 5,
+    fontFamily:'SCDream',
     fontWeight: "600",
     color: 'white'
   },

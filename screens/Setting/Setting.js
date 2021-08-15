@@ -6,6 +6,7 @@ import { Feather } from '@expo/vector-icons';
 import { Picker } from '@react-native-picker/picker';
 import { MaterialCommunityIcons, Entypo, AntDesign, FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
+import { useFonts } from 'expo-font';
 
 const Width = Dimensions.get('window').width;
 
@@ -55,7 +56,8 @@ const SemiTitle = styled.Text`
   flex-direction: row;
   align-items: center;
   font-weight: 600;
-  margin: 10px;
+  font-Family:SCDream;
+  margin: 8px 5px;
   font-size: 15px;
 `;
 
@@ -66,11 +68,18 @@ export default function Settings() {
 
   //edit
   const [EditCondition, setEditCondition]= useState(true);
+  //font
+  const [loaded] = useFonts({
+    SCDream: require('../../assets/fonts/SCDream3.otf'),
+  });
+  if (!loaded) {
+    return null;
+  }
   return (
       <View style={styles.container}>
       <View>
         <Title>
-          <Text style={{fontSize: 30}}>내 정보</Text>
+          <Text style={{fontSize: 30, fontFamily:'SCDream'}}>내 정보</Text>
           <TouchableOpacity onPress={()=>{setEditCondition(!EditCondition)}}>
             <Text style={styles.edit}>Edit<Feather style={styles.icon} name="edit" size={14} color="black" /></Text>
           </TouchableOpacity>
@@ -110,16 +119,16 @@ export default function Settings() {
           <MyPost>
           <View style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent: 'space-between'}}>
             <SemiTitle><MaterialCommunityIcons name="post" size={22} color="rgb(255,88,31)" /> 내가 쓴 글</SemiTitle>
-            <Text style={{fontWeight: '600', fontSize:14}}> 더보기 <AntDesign name="rightcircle" size={14} color="black" /> </Text>
+            <Text style={{fontWeight: '600', fontSize:14, fontFamily:'SCDream'}}> 더보기 <AntDesign name="rightcircle" size={14} color="black" /> </Text>
           </View>
           <PostBox>
             <PostColumn>
               <Text style={styles.numColumn}>번호</Text>
-              <Text>제목</Text>
+              <Text style={{fontFamily:'SCDream'}}>제목</Text>
             </PostColumn>
             <PostColumn>
               <Text style={styles.numColumn}>1</Text>
-              <Text>농구 같이 하실 분!!</Text>
+              <Text style={{fontFamily:'SCDream'}}>농구 같이 하실 분!!</Text>
             </PostColumn>
           </PostBox>
         </MyPost>
@@ -127,8 +136,8 @@ export default function Settings() {
       </View>
       {/*비밀번호 재설정과 로그아웃 */}
       <View style={styles.last}>
-        <TouchableOpacity><Text style={{marginBottom: 15, fontWeight: '600', color:'rgb(13, 98, 122)'}}>비밀번호 재설정하기</Text></TouchableOpacity>
-        <TouchableOpacity onPress={() => {navigation.navigate('Login')}}><Text style={{fontWeight: '600', color:'rgb(13, 98, 122)'}}>로그아웃</Text></TouchableOpacity>
+        <TouchableOpacity><Text style={{marginBottom: 15, fontFamily:'SCDream', fontWeight: '600', color:'rgb(13, 98, 122)'}}>비밀번호 재설정하기</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => {navigation.navigate('Login')}}><Text style={{fontFamily:'SCDream', fontWeight: '600', color:'rgb(13, 98, 122)'}}>로그아웃</Text></TouchableOpacity>
       </View>
     </View>
   );
@@ -175,7 +184,8 @@ const styles = StyleSheet.create({
     borderWidth: 2,
   },
   numColumn: {
-    width: '20%'
+    width: '20%',
+    fontFamily:'SCDream'
   },
   formElement: {
     paddingLeft: 20,
