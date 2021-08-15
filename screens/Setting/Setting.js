@@ -4,7 +4,7 @@ import styled from "styled-components/native";
 import { Dimensions } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { Picker } from '@react-native-picker/picker';
-import { MaterialCommunityIcons, Entypo, AntDesign } from '@expo/vector-icons';
+import { MaterialCommunityIcons, Entypo, AntDesign, FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
 
 const Width = Dimensions.get('window').width;
@@ -77,7 +77,8 @@ export default function Settings() {
         </Title>
         <Edit>
           <View style={styles.ImageName}>
-            <BG source={{uri:'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_960_720.jpg'}}></BG>
+            <BG source={{uri:'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_960_720.jpg'}}/>
+            <View style={EditCondition? styles.hiddenCamera : styles.camera}><FontAwesome name="camera" size={22} color="black" /></View>
             <Text style={{fontSize: 15, fontWeight: 600, marginBottom:10}}>USER NICKNAME</Text>
           </View>
           <View style={styles.formElement}>
@@ -145,6 +146,27 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%"
   },
+  //Image~
+  ImageName: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  camera: {
+    position: 'absolute',
+    bottom:33,
+    right:120,
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    width:33,
+    height: 33,
+    backgroundColor: 'rgba(204, 204, 204, 1)',
+    borderRadius:25
+  },
+  hiddenCamera:{
+    display: 'none'
+  }, 
   edit:{
     backgroundColor: "rgb(236, 159, 87)",
     borderRadius: 25,
@@ -154,11 +176,6 @@ const styles = StyleSheet.create({
   },
   numColumn: {
     width: '20%'
-  },
-  ImageName: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
   },
   formElement: {
     paddingLeft: 20,
