@@ -5,19 +5,23 @@ import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from '@expo/vector-icons';
 
 //디자인 수정 예정 ^^
-const Container = styled.View`
-  padding: 0 20px;
-  background-color: rgba(12, 144, 125, 1);
+const Background = styled.Image`
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center
+  height: 100%;
+  position:absolute;
+  top: 0px;
+  left:0px;
+`;
+const Container = styled.View`
+  width: 100%;
   height: 100%;
 `;
 
 const BG = styled.Image`
   width: 190px; 
   height: 150px;
+  position: absolute;
+  top: 120px;
 `;
 
 const Icon = styled.Image`
@@ -36,9 +40,11 @@ export default function Login() {
 
   return (
     <Container>
+      <Background source={require('../image/배경.png')}></Background>
       <View style={styles.container}>
-        <BG source={require('../image/임시로고.png')}></BG>
-        <View style={styles.form}>
+        <BG source={require('../image/임시로고.png')}/>
+        <View style={{display: 'flex', flexDirection:'column', alignItems:'center', justifyContent:'flex-end'}}>
+          <View style={styles.form}>
             <View style={styles.formElement}>
                 <TextInput
                 value={username}
@@ -58,30 +64,26 @@ export default function Login() {
                 secureTextEntry={true}
                 />
             </View>
-        </View>
-        <TouchableOpacity style={styles.buttonStyle}>
-            <Text style={{color:'white'}} onPress={goToHome}>로그인</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonStyle}>
-            <Text style={{color:'white'}} onPress={goToHome}>회원가입</Text>
-        </TouchableOpacity>
-        
-        <View style={styles.find}>
-            <TouchableOpacity>
-                <Text>Find Account</Text>
-            </TouchableOpacity>
-            <Text style={{marginLeft:3, marginRight: 3}}> | </Text>
-            <TouchableOpacity>
-                <Text>Find Password</Text>
-            </TouchableOpacity>
-        </View>
-
-        <Text style={{margin:20}}>or</Text>
-        <View style={styles.or}>
-          <AntDesign name="github" style={{marginRight:20}} size={24} color="rgb(75,37,134)" />
-          <Icon style={{marginRight:20}} source={require('../image/kakao.png')}/>
-          <Text style={styles.naver}>N</Text>
-        </View>
+          </View>
+          <TouchableOpacity style={styles.buttonStyle}>
+              <Text style={{color:'white'}} onPress={goToHome}>로그인</Text>
+          </TouchableOpacity>     
+          <View style={styles.find}>
+              <TouchableOpacity>
+                  <Text>Find Account</Text>
+              </TouchableOpacity>
+              <Text style={{marginLeft:3, marginRight: 3}}> | </Text>
+              <TouchableOpacity>
+                  <Text>Find Password</Text>
+              </TouchableOpacity>
+          </View>
+          <Text style={{margin:20}}>or</Text>
+          <View style={styles.or}>
+            <AntDesign name="github" style={{marginRight:20}} size={24} color="rgb(75,37,134)" />
+            <Icon style={{marginRight:20}} source={require('../image/kakao.png')}/>
+            <Text style={styles.naver}>N</Text>
+          </View>
+          </View>
         </View>
     </Container>
   );
@@ -102,7 +104,7 @@ const styles = StyleSheet.create({
     },
     container: {
       flex: 1,
-      justifyContent: "center",
+      justifyContent: "flex-end",
       alignItems: "center",
     },
     form: {
@@ -121,7 +123,7 @@ const styles = StyleSheet.create({
       borderWidth: 2,
       borderColor: "black",
       backgroundColor:'white',
-      borderRadius: 10,
+      borderRadius: 20,
       padding: 8
     },
     buttonStyle: {
@@ -134,7 +136,7 @@ const styles = StyleSheet.create({
       borderWidth: 2,
       borderColor: "black",
       backgroundColor: "rgb(13, 98, 122)",
-      borderRadius: 10
+      borderRadius: 20
     },
     find: {
         display:'flex',
@@ -144,7 +146,11 @@ const styles = StyleSheet.create({
     },
     or:{
       display:'flex',
+      backgroundColor: 'rgba(1,1,1,0.05)',
+      borderRadius:20,
+      padding: 10,
       flexDirection: 'row',
-      alignItems: 'center'
+      alignItems: 'center',
+      marginBottom:50
     }
 });
