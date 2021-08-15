@@ -5,6 +5,7 @@ import { Dimensions } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { Picker } from '@react-native-picker/picker';
 import { MaterialCommunityIcons, Entypo, AntDesign } from '@expo/vector-icons';
+import { useNavigation } from "@react-navigation/native";
 
 const Width = Dimensions.get('window').width;
 
@@ -18,19 +19,17 @@ const Title = styled.Text`
 
 
 const BG = styled.Image`
-  width: ${Width / 2.5};   
-  height: ${Width / 2.5};
+  width: ${Width / 3};   
+  height: ${Width / 3};
   border-radius: 50%;
   margin-bottom: 10px;
 `;
 
 const Edit = styled.View`
   background-color: white;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 0px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  height: 100%;
 `;
 
 const MyPost= styled.View`
@@ -47,19 +46,28 @@ const PostColumn= styled.View`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px 10px;
+  padding: 4px 10px;
   border: 1px solid grey;
+`;
+
+const SemiTitle = styled.Text`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 600;
+  margin: 10px;
+  font-size: 15px;
 `;
 
 export default function Settings() {
   const [selectedCity, setSelectedCity] = useState();
   const [selectedDo, setSelectedDo] = useState();
+  const navigation = useNavigation();
+
   //edit
   const [EditCondition, setEditCondition]= useState(true);
   return (
-      <View
-        style={styles.container}
-      >
+      <View style={styles.container}>
       <View>
         <Title>
           <Text style={{fontSize: 30}}>내 정보</Text>
@@ -70,10 +78,10 @@ export default function Settings() {
         <Edit>
           <View style={styles.ImageName}>
             <BG source={{uri:'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_960_720.jpg'}}></BG>
-            <Text style={{fontSize: 20, fontWeight: 600, marginBottom:10}}>USER NICKNAME</Text>
+            <Text style={{fontSize: 15, fontWeight: 600, marginBottom:10}}>USER NICKNAME</Text>
           </View>
           <View style={styles.formElement}>
-          <Text style={styles.semiTitle}><Entypo name="location-pin" size={24} color="rgb(120, 32, 255)" />위치</Text>
+          <SemiTitle><Entypo name="location-pin" size={24} color="rgb(120, 32, 255)" />위치</SemiTitle>
             <View style={styles.locationPicker} pointerEvents={EditCondition ? 'none' : 'auto'}>
               <Picker
                 style={EditCondition? styles.focusedPicker : styles.picker}
@@ -85,17 +93,6 @@ export default function Settings() {
                 <Picker.Item label="포항시" value="포항시" />
                 <Picker.Item label="구미시" value="구미시" />
               </Picker>
-              {/* 
-              <Picker
-                style={EditCondition? styles.focusedPicker : styles.picker}
-                selectedValue={selectedGun}
-                onValueChange={(itemValue) =>
-                  setSelectedGun(itemValue)
-                }>
-                <Picker.Item label="성주군" value="성주군" />
-                <Picker.Item label="장흥군" value="장흥군" />
-              </Picker>
-              */}
               <Picker
                 style={EditCondition? styles.focusedPicker : styles.picker}
                 selectedValue={selectedDo}
@@ -108,28 +105,29 @@ export default function Settings() {
               </Picker>
             </View>
           </View>
-
-      <MyPost>
-        <View style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent: 'space-between'}}>
-          <Text style={styles.semiTitle}><MaterialCommunityIcons name="post" size={22} color="rgb(255,88,31)" /> 내가 쓴 글</Text>
-          <Text style={{fontWeight: 600, fontSize:14}}> 더보기 <AntDesign name="rightcircle" size={14} color="black" /> </Text>
-        </View>
-        <PostBox>
-          <PostColumn>
-            <Text style={styles.numColumn}>번호</Text>
-            <Text>제목</Text>
-          </PostColumn>
-          <PostColumn>
-            <Text style={styles.numColumn}>1</Text>
-            <Text>농구 같이 하실 분!!</Text>
-          </PostColumn>
-        </PostBox>
-      </MyPost>
-      </Edit>
+          {/*내가 쓴 글 */}
+          <MyPost>
+          <View style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent: 'space-between'}}>
+            <SemiTitle><MaterialCommunityIcons name="post" size={22} color="rgb(255,88,31)" /> 내가 쓴 글</SemiTitle>
+            <Text style={{fontWeight: 600, fontSize:14}}> 더보기 <AntDesign name="rightcircle" size={14} color="black" /> </Text>
+          </View>
+          <PostBox>
+            <PostColumn>
+              <Text style={styles.numColumn}>번호</Text>
+              <Text>제목</Text>
+            </PostColumn>
+            <PostColumn>
+              <Text style={styles.numColumn}>1</Text>
+              <Text>농구 같이 하실 분!!</Text>
+            </PostColumn>
+          </PostBox>
+        </MyPost>
+        </Edit>
       </View>
+      {/*비밀번호 재설정과 로그아웃 */}
       <View style={styles.last}>
         <TouchableOpacity><Text style={{marginBottom: 15, fontWeight: '600', color:'rgb(13, 98, 122)'}}>비밀번호 재설정하기</Text></TouchableOpacity>
-        <TouchableOpacity><Text style={{fontWeight: '600', color:'rgb(13, 98, 122)'}}>로그아웃</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => {navigation.navigate('Login')}}><Text style={{fontWeight: '600', color:'rgb(13, 98, 122)'}}>로그아웃</Text></TouchableOpacity>
       </View>
     </View>
   );
@@ -156,11 +154,6 @@ const styles = StyleSheet.create({
   },
   numColumn: {
     width: '20%'
-  },
-  semiTitle: {
-    fontWeight: "600",
-    margin: 10,
-    fontSize: 20
   },
   ImageName: {
     display: 'flex',
@@ -209,10 +202,11 @@ const styles = StyleSheet.create({
   },
   last:{
     backgroundColor: 'rgba(0,0,0,0)',
-    height:'100%',
+    height:'20%',
     dlsplay:'flex',
     flexDirection: 'column',
     alignItems:'center',
-    paddingTop:95,
+    paddingTop:25,
+    paddingBottom:50
   }
 });

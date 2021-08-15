@@ -3,6 +3,10 @@ import { View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import styled from "styled-components/native";
 import Modal from 'react-native-modal'
 
+/*
+  이미지 저작권 https://www.flaticon.com/free-icon/ping-pong_140412
+  license allows : For commercial and personal projects
+*/
 const Text = styled.Text``;
 
 const ImageBox = styled.View`
