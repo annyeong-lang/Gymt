@@ -3,14 +3,20 @@ import Contest from "./Contest";
 import WeatherApi from "./WeatherApi";
 import Record from "./Record";
 import Interest from "./Interest";
-import ScrollContainer from "../../components/ScrollContainer";
+import { ScrollView } from "react-native";
+import { StyleSheet } from "react-native";
 
-
+const styles = StyleSheet.create({
+  container:{
+    backgroundColor: 'white'
+  }
+});
 export default () => (
-  <ScrollContainer>
-    <Contest />
-    <WeatherApi />
-    <Record />
-    <Interest />
-  </ScrollContainer> 
+  <ScrollView style={styles.container} showsHorizontalScrollIndicator={false} >
+      <Contest />
+      <Record />
+      <WeatherApi />
+      <Interest />
+  </ScrollView> 
 );
+

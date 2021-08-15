@@ -1,5 +1,4 @@
 import React from "react"
-
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from "./Home";
 import MoreContest from "./MoreContest";
@@ -12,7 +11,6 @@ export default function HomeEntry(){
         <Stacks.Screen  
             options={{headerShown : false}}
             name="Home" component={Home} />
-
         <Stacks.Screen
             name="MoreContest"
             options={{

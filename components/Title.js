@@ -1,14 +1,25 @@
 import React from "react";
-import styled from "styled-components/native";
+import { Text, StyleSheet } from "react-native";
+import { useFonts } from 'expo-font';
 
-const Text = styled.Text`
-  margin-left: 5px;
-  color: black;
-  font-weight: bold;
-  font-size: 16px;
-  font-Family:'SCDream';
-`;
+const styles = StyleSheet.create({
+  title:{
+    marginLeft: 5,
+    color: 'black',
+    fontWeight: 'bold',
+    fontSize: 16,
+    fontFamily:'SCDream'
+  }
+});
 
-const Title = ({ title }) => <Text>{title}</Text>;
-
-export default Title;
+export default function Title ({ title }) {
+  const [loaded] = useFonts({
+    SCDream: require('../assets/fonts/SCDream3.otf'),
+  });
+  if (!loaded) {
+    return null;
+  }
+  return(
+    <Text style={styles.title}>{title}</Text>
+  );
+}

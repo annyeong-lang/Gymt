@@ -2,7 +2,6 @@
 import React from "react";
 import { Text, StyleSheet, View } from "react-native";
 import styled from "styled-components/native";
-import Title from "../Title";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Border from "./Border";
 import { LinearGradient } from "expo-linear-gradient";
@@ -84,7 +83,8 @@ export default function Weather ({ temp, condition, humidity }) {
   <>
     <Container>
       <MaterialCommunityIcons name="weather-sunny" size={24} color="orange" />
-      <Title title={"오늘의 날씨"} />
+        <Text> </Text>
+        <Text style={{fontSize:16, fontWeight:'600', fontFamily:'SCDream'}}>오늘의 날씨</Text>
     </Container>
     <Weather_container>
       <LinearGradient

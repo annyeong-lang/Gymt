@@ -8,7 +8,6 @@ import { MaterialCommunityIcons, Entypo, AntDesign, FontAwesome } from '@expo/ve
 import { useNavigation } from "@react-navigation/native";
 import { useFonts } from 'expo-font';
 
-const Width = Dimensions.get('window').width;
 
 const Title = styled.Text`
   font-weight: 600;
@@ -20,15 +19,15 @@ const Title = styled.Text`
 
 
 const BG = styled.Image`
-  width: ${Width / 3};   
-  height: ${Width / 3};
-  border-radius: 50%;
+  width: 140px;   
+  height: 140px;
+  border-radius: 70px;
   margin-bottom: 10px;
 `;
 
 const Edit = styled.View`
   background-color: white;
-  padding: 20px 0px;
+  padding: 30px 0px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 `;
@@ -214,7 +213,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 10
+    marginBottom: 20
   },
   picker: {
     padding: 8,
@@ -233,7 +232,7 @@ const styles = StyleSheet.create({
     display:'flex',
     flexDirection: 'column',
     alignItems:'center',
-    paddingTop:25,
+    paddingTop:10,
     paddingBottom:50
   }
 });

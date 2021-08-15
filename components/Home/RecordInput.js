@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, TextInput, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import styled from "styled-components/native";
 import Modal from 'react-native-modal'
 
@@ -7,7 +7,6 @@ import Modal from 'react-native-modal'
   이미지 저작권 https://www.flaticon.com/free-icon/ping-pong_140412
   license allows : For commercial and personal projects
 */
-const Text = styled.Text``;
 
 const ImageBox = styled.View`
   display: flex;
@@ -122,8 +121,8 @@ function RecordInput(props) {
           </TouchableOpacity>
         </ImageBox>
         {/* 운동 시간 */}
-        <p style={{fontWeight: 900}}>운동 시간</p>
-        <div style={{display:'flex', justifyContent:'center', alignItems:'center', marginBottom: 15}}>
+        <Text style={{fontWeight: 900, fontSize:16, marginTop:20, marginBottom:10}}>운동 시간</Text>
+        <View style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center', marginBottom: 15}}>
           <TextInput
             maxLength={2} 
             placeholder="00"
@@ -131,7 +130,7 @@ function RecordInput(props) {
             onChangeText={startHourInputHandler}
             value={enteredStartHour}
           />
-          <div style={{fontSize : 13, marginLeft: 5, marginRight: 5}}>:</div>
+          <Text style={{fontSize : 13, marginLeft: 5, marginRight: 5}}>:</Text>
           <TextInput
             maxLength={2} 
             placeholder="00"
@@ -139,7 +138,7 @@ function RecordInput(props) {
             onChangeText={startMinInputHandler}
             value={enteredStartMin}
           />
-          <div style={{fontSize : 13, marginLeft: 5, marginRight: 5}}>-</div>
+          <Text style={{fontSize : 13, marginLeft: 5, marginRight: 5}}>-</Text>
           <TextInput
             maxLength={2}
             placeholder="00"
@@ -147,7 +146,7 @@ function RecordInput(props) {
             onChangeText={endHourInputHandler}
             value={enteredEndHour}
           />
-          <div style={{fontSize : 13,marginLeft: 5, marginRight: 5}}>:</div>
+          <Text style={{fontSize : 13,marginLeft: 5, marginRight: 5}}>:</Text>
           <TextInput
             maxLength={2}
             placeholder="00"
@@ -155,18 +154,18 @@ function RecordInput(props) {
             onChangeText={endMinInputHandler}
             value={enteredEndMin}
           />
-        </div>
-        <p style={{fontWeight: 900}}>총 운동 시간</p>
+         </View>
+        <Text style={{fontWeight: 900, fontSize:16, marginTop:20, marginBottom:10}}>총 운동 시간</Text>
         {/* 총 시간 */}
-        <div style={{display:'flex', justifyContent:'center', alignItems:'center', marginBottom: 15}}>
-          <TextInput
+        <View style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center', marginBottom: 15}}>
+        <TextInput
             placeholder="0"
             style={styles.textInputStyle}
             onChangeText={totalInputHandler}
             value={enteredTotal}
           />
-          <div style={{fontSize : 13, marginLeft: 2}}>시간</div>
-        </div>
+          <Text style={{fontSize : 13, marginLeft: 2}}>시간</Text>
+        </View>
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.button1} onPress={addRecordHandler} >
             <Text>기록하기</Text>
@@ -192,7 +191,7 @@ const styles = StyleSheet.create({
     display:'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '80vw',
+    width: '85vw',
     height: '60vh',
     backgroundColor: 'white',
     padding: 20,
@@ -209,7 +208,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    width: '60%',
+    width: '70%',
     margin: 10,
     marginBottom: 20
   },

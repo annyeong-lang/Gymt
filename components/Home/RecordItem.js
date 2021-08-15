@@ -1,10 +1,9 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
-import styled from "styled-components/native";
+import { TouchableOpacity, View, Text } from 'react-native';import styled from "styled-components/native";
 import { FontAwesome } from '@expo/vector-icons';
 
 const Health_record = styled.View`
-    margin: 0 80px;
+    margin: 0 40px;
     margin-top: 20px;
     display: flex;
     flex-direction: row;
@@ -22,11 +21,10 @@ export default function RecordItem(props) {
   return (
     <>
       <Health_record>
-        <div style={{display:'flex', width: '85%', flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
-          <BG source={ImageList[props.iconId-1]} />
-          <span>{props.startHour}:{props.startMin} - {props.endHour}:{props.endMin}</span>
-          <span>{props.total}시간</span>
-        </div>
+      <View style={{display:'flex', width: '85%', flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>          <BG source={ImageList[props.iconId-1]} />
+      <Text>{props.startHour}:{props.startMin} - {props.endHour}:{props.endMin}</Text>
+          <Text>{props.total}시간</Text>
+        </View>
         <TouchableOpacity
           style={{width: '15%', display:'flex', alignItems:'flex-end'}}
           activeOpacity={0.8}

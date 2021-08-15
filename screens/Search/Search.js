@@ -1,15 +1,14 @@
 import React from "react";
-import { Text } from "react-native";
+import { ScrollView } from "react-native";
 import Athlete from "./Athlete";
 import Location from "./Location";
 import SearchButt from "./SearchButt";
 // import SearchResult from "../SearchResult/SearchResult";
-import ScrollContainer from "../../components/ScrollContainer";
 
 export default () => (
-  <ScrollContainer>
+  <ScrollView showsHorizontalScrollIndicator={false} >
     <Athlete></Athlete>
     <Location></Location>
     <SearchButt></SearchButt>
-  </ScrollContainer>
+  </ScrollView>
 );

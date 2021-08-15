@@ -1,10 +1,9 @@
 //날씨 정보
 import styled from "styled-components/native";
-import Title from "../../components/Title";
-import { FontAwesome, AntDesign } from '@expo/vector-icons';
+import { FontAwesome, Entypo } from '@expo/vector-icons';
 import Border from "../../components/Home/Border"
 import React, { useState } from 'react';
-import { StyleSheet, View, FlatList, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native';
 import RecordItem from '../../components/Home/RecordItem';
 import RecordInput from '../../components/Home/RecordInput';
 
@@ -27,9 +26,6 @@ const Container = styled.View`
   margin-bottom: 10px;
 `;
 
-const PlusIcon = styled.View`
-    margin: 20px 60px;
-`;
 
 export default function Record() {
   const [courseRecords, setCourseRecords] = useState([]);
@@ -54,11 +50,11 @@ export default function Record() {
   };
 
   return (
-    <div>
+    <View>
       <Container>
         <View style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
           <FontAwesome name="heartbeat" size={20} color="red" />
-          <Title title={"운동 기록"} />
+          <Text style={{fontSize:16, fontWeight:'600', fontFamily:'SCDream'}}> 운동 기록</Text>
           <Today>{date.getMonth() + 1}월 {date.getDate()}일</Today>
         </View>
         <FontAwesome style={{marginRight: 10}} name="calendar" size={22} color="black" />
@@ -88,22 +84,18 @@ export default function Record() {
         />
       <View style={styles.container}>
         <TouchableOpacity onPress={() => setIsAddMode(true)} >
-          <PlusIcon>
-              <AntDesign name="pluscircle" size={36} color="rgb(236, 159, 87)" />
-          </PlusIcon>
+          <Entypo name="circle-with-plus" size={34} color="rgb(236, 159, 87)" />
         </TouchableOpacity>
       </View>
-
      <Border/>
-    </div>
+    </View>
  );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginVertical: 20
   }
 });

@@ -126,15 +126,16 @@ const styles = StyleSheet.create({
     },
     formInput: {
       height: 40,
-      minWidth: 200,
+      minWidth: 250,
       borderWidth: 2,
       borderColor: "black",
       backgroundColor:'white',
       borderRadius: 20,
-      padding: 8
+      padding: 8,
+      paddingLeft: 10
     },
     buttonStyle: {
-      minWidth: 200,
+      minWidth: 250,
       marginBottom: 5,
       height: 40,
       display: 'flex',
