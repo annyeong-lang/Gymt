@@ -14,7 +14,6 @@ const ImageBox = styled.View`
   border: 1px solid rgba(1, 1, 1, 0.2);
   border-radius: 25px;
   padding: 10px 10px;
-  margin-bottom: 10px;
 `;
 
 const BG = styled.Image`
@@ -98,7 +97,7 @@ function RecordInput(props) {
   return (
     <Modal visible={props.visible} animationType="fade" style={styles.modal}>
       <View style={styles.innerView}>
-        <p style={{fontWeight: 900}}>운동 종목</p>
+      <Text style={{fontWeight: '900', fontSize:16, marginTop:20, marginBottom:10}}>운동 종목</Text>
         {/*이미지 고르기 */}
         <ImageBox>
           <TouchableOpacity onPress={()=>{onPress(1)}} style={pressImage.find(item=> item.id===1).press ? styles.untouched : styles.touched}>
@@ -121,7 +120,7 @@ function RecordInput(props) {
           </TouchableOpacity>
         </ImageBox>
         {/* 운동 시간 */}
-        <Text style={{fontWeight: 900, fontSize:16, marginTop:20, marginBottom:10}}>운동 시간</Text>
+        <Text style={{fontWeight: '900', fontSize:16, marginTop:20, marginBottom:10}}>운동 시간</Text>
         <View style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center', marginBottom: 15}}>
           <TextInput
             maxLength={2} 
@@ -154,11 +153,11 @@ function RecordInput(props) {
             onChangeText={endMinInputHandler}
             value={enteredEndMin}
           />
-         </View>
-        <Text style={{fontWeight: 900, fontSize:16, marginTop:20, marginBottom:10}}>총 운동 시간</Text>
+        </View>
         {/* 총 시간 */}
+        <Text style={{fontWeight: '900', fontSize:16, marginTop:20, marginBottom:10}}>총 운동 시간</Text>
         <View style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center', marginBottom: 15}}>
-        <TextInput
+          <TextInput
             placeholder="0"
             style={styles.textInputStyle}
             onChangeText={totalInputHandler}
@@ -166,14 +165,15 @@ function RecordInput(props) {
           />
           <Text style={{fontSize : 13, marginLeft: 2}}>시간</Text>
         </View>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button1} onPress={addRecordHandler} >
-            <Text>기록하기</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button2} onPress={cancelRecordHandler} >
-            <Text>취소</Text>
-          </TouchableOpacity>
-        </View>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button1} onPress={addRecordHandler} >
+          <Text>기록하기</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button2} onPress={cancelRecordHandler} >
+          <Text>취소</Text>
+        </TouchableOpacity>
+      </View>
+
       </View>
     </Modal>
   );
@@ -191,8 +191,8 @@ const styles = StyleSheet.create({
     display:'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '85vw',
-    height: '60vh',
+    width: '85%',
+    height: '60%',
     backgroundColor: 'white',
     padding: 20,
     borderRadius: 25,
@@ -217,14 +217,14 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     width: '45%',
     padding: 10,
-    textAlign: 'center',
+    alignItems: 'center'
   },
   button2: {
     backgroundColor: "rgba(236, 159, 87, 0.8)",
     borderRadius: 25,
     width: '45%',
     padding: 10,
-    textAlign: 'center'
+    alignItems: 'center'
   },
   touched: {
     opacity: 0.5
