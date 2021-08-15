@@ -1,26 +1,23 @@
 import React, { useState } from "react";
-import { TouchableOpacity, View} from "react-native";
+import { TouchableOpacity, View, StyleSheet, Text} from "react-native";
 import styled from "styled-components/native";
 import Title from "../../components/Title";
 import { AntDesign, FontAwesome, Feather } from '@expo/vector-icons';
 import { useFonts } from 'expo-font';
 
-// const { width: WIDTH } = Dimensions.get("window");
-
 const TextBox = styled.Text`
     display: flex;
     align-items: center;
-`;
-const Text = styled.Text`
-    margin-left: 5px;
     font-size: 13px;
-    font-Family: 'SCDream';
+    font-Family:'SCDream';
 `;
 
 const SemiTitle = styled.Text`
     font-weight: 600;
     margin-bottom: 5px;
+    font-Family:'SCDream';
 `;
+
 const Container = styled.View`
   padding: 0 20px;
   align-items: center;
@@ -30,12 +27,11 @@ const Container = styled.View`
 `;
 
 const BG = styled.Image`
-  margin: 0px 20px;  
+  margin: 10px 20px;  
   margin-top: 15px;
   border-radius: 10px;
-  width: width;
-  height: 220px;
-  margin-bottom: 10px;
+  width: 90%;
+  height: 190px;
 `;
 
 const Result_content = styled.View`
@@ -44,6 +40,11 @@ const Result_content = styled.View`
 `;
 
 
+const styles = StyleSheet.create({
+  textList:{
+    marginLeft: 5
+  }
+});
 
 export default function SearchResult(){
   const [color, setColor] = useState("false");
@@ -75,14 +76,14 @@ export default function SearchResult(){
             <AntDesign name="star" size={24} color="rgb(255, 194, 81)" />}
         </TouchableOpacity>
       </Container>
-      <BG source={'https://www.phsisul.org/File/Download/a13a0a4d7fe11880a27a3cee83f239fd'} />
+      <BG source={require('../../image/체육관.jpg')} />
       <Result_content>
         <SemiTitle>경상북도 포항시 오천체육문화타운</SemiTitle>
-        <TextBox><FontAwesome name="map-marker" size={18} color="black" /><Text>경북 포항시 남구 냉천로 580</Text></TextBox>
-        <TextBox><FontAwesome name="phone" size={18} color="black" /><Text>054-280-9525</Text></TextBox>
-        <TextBox><AntDesign name="clockcircle" size={15} color="black" /><Text>07:00 ~ 23:00</Text></TextBox>
-        <TextBox><Feather name="check-square" size={15} color="black" /><Text>배드민턴, 탁구, 농구, 축구, 풋살</Text></TextBox>
-        <TextBox><FontAwesome name="won" size={15} color="black" /><Text>부분 유료</Text></TextBox>
+        <TextBox><FontAwesome name="map-marker" size={18} color="black" /> <Text style={styles.textList}>경북 포항시 남구 냉천로 580</Text></TextBox>
+        <TextBox><FontAwesome name="phone" size={18} color="black" /> <Text style={styles.textList}>054-280-9525</Text></TextBox>
+        <TextBox><AntDesign name="clockcircle" size={15} color="black" /> <Text style={styles.textList}>07:00 ~ 23:00</Text></TextBox>
+        <TextBox><Feather name="check-square" size={15} color="black" /> <Text style={styles.textList}>배드민턴, 탁구, 농구, 축구, 풋살</Text></TextBox>
+        <TextBox><FontAwesome name="won" size={15} color="black" /> <Text style={styles.textList}>부분 유료</Text></TextBox>
       </Result_content>
     </View>
   );

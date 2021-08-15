@@ -1,22 +1,19 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import { BrowserRouter as Router } from 'react-router-dom'
 import { useNavigation } from "@react-navigation/native";
 
 export default function SearchButt(){
   const navigation = useNavigation();
     return(
-      <Router>
-        <View style= {styles.container}>
+      <View style= {styles.container}>
             <Text style={styles.title}>
             </Text>
         {/* <Link to="./SearchResult"> */}
         <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('SearchResult')}>
-        <Text style={{fontFamily:'SCDream'}}>체육관 검색</Text>
+        <Text style={{fontFamily:'SCDream', textAlign:'center'}}>체육관 검색</Text>
         </TouchableOpacity>
         {/* </Link> */}
-        </View>
-        </Router>
+      </View>
     );
 }
 
