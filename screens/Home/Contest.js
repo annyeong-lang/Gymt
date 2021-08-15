@@ -5,6 +5,7 @@ import { TouchableOpacity, ActivityIndicator, ScrollView, Dimensions, Text } fro
 import Slide from "../../components/Home/Slide";
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
 import Border from "../../components/Home/Border"
+import { useNavigation } from "@react-navigation/native";
 
 const { width: WIDTH, height: HEIGHT } = Dimensions.get("window");
 
@@ -48,35 +49,38 @@ const nowContest = [
   }
 ];
 
-export default ({ loading }) => (
-  <ScrollView
-    contentContainerStyle={{
-      flex: 1,
-      justifyContent: loading ? "center" : "flex-start"
-    }}
-  >
-    {loading ? (
-      <ActivityIndicator color="white" size="small" />
-    ) : (
-      <>
-        <Container>
-          <Title><FontAwesome name="flag" size={24} color="green" />  대회 정보</Title>
-          <TouchableOpacity>
-            <Text style={{fontWeight: 600, fontSize:14}}> 더보기 <AntDesign name="rightcircle" size={14} color="black" /> </Text>
-          </TouchableOpacity>
-        </Container>
-        <SliderContainer>
-          <Swiper controlsProps={{ dotsTouchable: true, prevPos: false, nextPos: false}} loop timeout={5} >
-            {nowContest.map(contest => (
-              <Slide
-                  backgroundImage = {contest.imageTitle}
-                  url = {contest.url}
-              />
-            ))}
-          </Swiper>
-        </SliderContainer>
-        <Border/>
-      </>
-    )}
-  </ScrollView>
-);
+export default function Contest ({ loading }) {
+  const navigation = useNavigation();
+  return (
+    <ScrollView
+      contentContainerStyle={{
+        flex: 1,
+        justifyContent: loading ? "center" : "flex-start"
+      }}
+    >
+      {loading ? (
+        <ActivityIndicator color="white" size="small" />
+      ) : (
+        <>
+          <Container>
+            <Title><FontAwesome name="flag" size={24} color="green" />  대회 정보</Title>
+            <TouchableOpacity onPress={() => {navigation.navigate('MoreContest')}}>
+              <Text style={{fontWeight: 600, fontSize:14}}> 더보기 <AntDesign name="rightcircle" size={14} color="black" /> </Text>
+            </TouchableOpacity>
+          </Container>
+          <SliderContainer>
+            <Swiper controlsProps={{ dotsTouchable: true, prevPos: false, nextPos: false}} loop timeout={5} >
+              {nowContest.map(contest => (
+                <Slide
+                    backgroundImage = {contest.imageTitle}
+                    url = {contest.url}
+                />
+              ))}
+            </Swiper>
+          </SliderContainer>
+          <Border/>
+        </>
+      )}
+    </ScrollView>
+  );
+}
