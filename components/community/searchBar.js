@@ -10,7 +10,7 @@ export default function SearchBar({word,handle}){
           variant="filled"
           width="90%"
           mb={5}
-          bg="gray.100"
+          bg="gray.50"
           borderRadius={10}
           py={1}
           onChange={(e)=>{

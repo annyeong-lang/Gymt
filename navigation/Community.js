@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import CommunityHomeScreen from "../screens/Community/communityhomeScreen";
 import PostingScreen from "../screens/Community/postingScreen";
 import WritingScreen from "../screens/Community/writeScreen";
+
  const Stacks=createStackNavigator();
 export default function App(){
  

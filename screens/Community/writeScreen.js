@@ -5,64 +5,33 @@ import Inputs from "./inputFormat"
   
 export default function WritingScreen({navigation})
   {
-    const obj={
+    const [inputs,setInputs]=useState({
       sports :"",
-      location :"",
+      location: "",
+      title: " ",
       id:"",
-      date :"",
-      title :"",
-      contents:""
-    }
-  
-    const [sports,setSports]=useState("");
-    const [location,setLocation]=useState("");
-    const [id,setId]=useState("");
-    const [title,setTitle]=useState("");
-    const [contents,setContents]=useState("");
-    const handleSelects=(label,value)=>{
-     
-      if(label==="종목"){
-       setSports(value);
-       obj.sports=value;
-     } 
-     else{
-       setLocation(value);
-       obj.location=value;
-     }
-    }
+      contents:"",
+      time:""
+    })
     
-    const handle=(event)=>{
-      switch(event.target.name){
-        case "titleInput" :{
-          setTitle(event.target.value);
-          obj.title=event.target.value;
-          break;
-        }
-        case "contentsInput" :{
-          setContents(event.targetvalue);
-          obj.contents=event.target.value;
-          break;
-        }
-        case "idInput" :{
-          setId(event.targetvalue);
-          obj.id=event.target.value;
-          break;
-        }
-      }
+    const onChange=(e)=>{
+      const name=e.target.name;
+      const value=e.target.value;
+      setInputs({
+        [name]: value,
+      });
     }
   
-  
-    const submit =()=>{
+    const onSubmit =()=>{
       return(navigation.navigate("wh"))
     }
     
     return(
       <NativeBaseProvider>
          <ScrollView>
-      <Inputs data={obj}
-              handle={handle}
-              handleSelects={handleSelects}
-             submit={submit}
+      <Inputs onChange={onChange}
+              onSubmit={onSubmit}
+              inputs={inputs}
                 />
            </ScrollView> 
         </NativeBaseProvider>

@@ -1,100 +1,65 @@
-import React,{useState} from "react"
-import {Center,Input,Icon,IconButton,Text,HStack,VStack,Box,Divider,NativeBaseProvider} from "native-base"
+import {
+  VStack,
+  Input,
+  Button,Box,
+  NativeBaseProvider,
+  HStack,Icon,Divider,
+  Center
+} from 'native-base';
+import React ,{useState} from 'react';
+import PostingElement from '../../components/community/postingElement';
 import { FontAwesome } from '@expo/vector-icons';
-import { ScrollView } from "react-native-gesture-handler";
-
-export default function PostingScreen(){
-   const [newComment,setNewComment]=useState("")
-    function  AddComment({input})
-    {
-      return(
-        <HStack space={2} px={1} >
-            <VStack>
-              <Icon size="sm" as={<FontAwesome name="user-circle" size={24} color="black" />}></Icon>
-            <Text>user</Text>
-            </VStack>
-            <Center><Text>{input}</Text></Center>
-          </HStack>
-      )
-    }
-     const c=["저도 할래요!"];
-   const submit=(newComment)=>{
-     c.push(newComment)
-   }
-
-  const info={
-     sports :"배드민턴",
-   location:"안동시",
-    id:"hello",
-    title: "농구 같이 하실 분!!",
-    comments: "1",
-    date: "2021 07 24",
-    looks: "4",
-    contents: "저녁에 농구 같이 하실 분 구해요"
-   }
-
-  
-  function EachPosting({info,submit})
+import ShowComments from '../../components/community/commentlist';
+import { ScrollView } from 'react-native';
+import { Ionicons } from '@expo/vector-icons'; 
+import { TouchableOpacity } from 'react-native';
+export default function PostingScreen({navigation})
 {
+  const onPress=()=>(navigation.navigate("h"))
+  const [com,setCom]=useState("");
+  const [clist,setClist]=useState(["저요!!"]);
 
-  function Sett({label,value}){
-    return(
-      <HStack space={2}  rounded={4}>
-        <Center px={2}  py={2}><Text fontSize="md">{label}</Text></Center>
-        <Center px={2}  py={1} ><Text fontSize="lg">{value}</Text></Center>
-      </HStack>
-    )
+  const onChange=(e)=>{
+    setCom(e.target.value)
   }
-   
-  
+
+  const onSubmit=(e)=>{
+   setCom(e.target.value)
+    const content=com
+    setClist((clist)=>{
+      return [...clist,com]
+    })
+  }
+
   return(
-     <Center mx={-1} pt={20}>
-        <VStack space={1}  width="80%" pb={2}>
-         <Sett label="종목" value={info.sports}></Sett>
-         <Sett label="위치" value={info.location}></Sett>
-         <Box ml={-1}><Sett label="작성자" value={info.id}></Sett></Box>
-         <Sett label="제목" value={info.title}></Sett> 
-         <Box bg="gray.50"  h={32} rounded={16} p={2}>
-           <Text fontSize="lg" p={2}>{info.contents}</Text>
-         </Box>
-         <Center my={2}ml={20}>{`${info.date} 작성`}</Center>
-        </VStack>
-        <Divider my={4}  />
-        <VStack width="80%">
-        <Box rounded={8} p={2} px={4} width="100%" bg="purple.300" ><Text fontSize="xl" color="white">댓글 </Text></Box>
-        <VStack rounded={12} bg="gray.50"  space={2} px={1} py={2} width="100%">
-        {
-          c.map((cur)=>
-          {
-            if(cur)
-            {
-              return(<AddComment input={cur} />)
-            }
-          })
-        }
-        <Input placeholder="댓글을 입력하세요"
+    <NativeBaseProvider>
+   <ScrollView>
+ <Box mt={6} ml={18} >
+   <TouchableOpacity onPress={onPress}><Icon as={<Ionicons name="arrow-back-circle-outline" color="black" />} size="lg" ></Icon>
+   </TouchableOpacity></Box>
+    <Center mt={8}>
+    <PostingElement />
+    <Divider my={4}  />
+    <Center width="80%" bg="purple.300" rounded={8} _text={{color:"white",fontSize:"lg"}} h={8}>댓글</Center>
+    <VStack p={2} rounded={8} width="80%" bg="white">
+    <ShowComments clist={clist} />
+     <Input placeholder="댓글을 입력하세요"
             mt={1}
-            value={newComment}
-            onChange={(e)=>setNewComment(e.target.value)}
+            value={com}
+            onChange={onChange}
             InputRightElement={
-              <IconButton variant="solid"  
-                  onPress={submit}  
-                    icon={
+           <Button
+                  onPress={onSubmit} 
+                  bg="purple.300">
                       <Icon size="sm" as={<FontAwesome name="send" size={24} />} color="white" />
-                    }
-                    bg="purple.300" />
+                    
+                </Button>
             }
         ></Input>
         </VStack>
-        </VStack>
     </Center>
-  )
-}
-   return (
-    <NativeBaseProvider>
-        <ScrollView>
-    <EachPosting info={info} />
     </ScrollView>
     </NativeBaseProvider>
-  );
+  )
+ 
 }

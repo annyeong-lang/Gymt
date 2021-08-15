@@ -1,9 +1,9 @@
 import React ,{ useState } from "react"
 import SearchBar from "../../components/community/searchBar"
 import Summary from "./summary"
-import {NativeBaseProvider,Center,ScrollView,Button,Fab, Icon, Box} from "native-base"
+import {NativeBaseProvider,Center,ScrollView,Fab, Icon, Box} from "native-base"
 import { TouchableOpacity } from "react-native";
-import { AntDesign } from "@expo/vector-icons"
+import { Entypo } from '@expo/vector-icons'; 
 
 export default function CommunityHomeScreen({navigation}){
   const [word,setWord]=useState("");
@@ -27,7 +27,7 @@ export default function CommunityHomeScreen({navigation}){
      <NativeBaseProvider>
      <Center mt={10} width="100%" px={4}>
      <SearchBar word={word}  handle={filtering} />
-    </Center>
+     </Center>
     <ScrollView px={4}>
         {
           list.map((cur)=>{
@@ -52,7 +52,7 @@ export default function CommunityHomeScreen({navigation}){
         position="absolute"
         size="sm"
         onPress={go}
-        icon={<Icon color="white" as={<AntDesign name="plus" />} size="sm" />}
+        icon={<Icon color="white" as={<Entypo name="pencil"/>} size="sm" />}
       />
     </Box>
      </NativeBaseProvider>
