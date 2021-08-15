@@ -121,6 +121,7 @@ function RecordInput(props) {
         <p style={{fontWeight: 900}}>운동 시간</p>
         <div style={{display:'flex', justifyContent:'center', alignItems:'center', marginBottom: 15}}>
           <TextInput
+            maxLength={2} 
             placeholder="00"
             style={styles.textInputStyle}
             onChangeText={startHourInputHandler}
@@ -128,6 +129,7 @@ function RecordInput(props) {
           />
           <div style={{fontSize : 13, marginLeft: 5, marginRight: 5}}>:</div>
           <TextInput
+            maxLength={2} 
             placeholder="00"
             style={styles.textInputStyle}
             onChangeText={startMinInputHandler}
@@ -135,6 +137,7 @@ function RecordInput(props) {
           />
           <div style={{fontSize : 13, marginLeft: 5, marginRight: 5}}>-</div>
           <TextInput
+            maxLength={2}
             placeholder="00"
             style={styles.textInputStyle}
             onChangeText={endHourInputHandler}
@@ -142,6 +145,7 @@ function RecordInput(props) {
           />
           <div style={{fontSize : 13,marginLeft: 5, marginRight: 5}}>:</div>
           <TextInput
+            maxLength={2}
             placeholder="00"
             style={styles.textInputStyle}
             onChangeText={endMinInputHandler}
@@ -184,7 +188,7 @@ const styles = StyleSheet.create({
     display:'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '70vw',
+    width: '80vw',
     height: '60vh',
     backgroundColor: 'white',
     padding: 20,

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { TextInput, StyleSheet, View, TouchableOpacity, Text } from "react-native";
+import { TextInput, StyleSheet, View, TouchableOpacity, Text, Image } from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
+import { AntDesign } from '@expo/vector-icons';
 
+//디자인 수정 예정 ^^
 const Container = styled.View`
   padding: 0 20px;
   background-color: rgba(12, 144, 125, 1);
@@ -16,6 +18,11 @@ const Container = styled.View`
 const BG = styled.Image`
   width: 190px; 
   height: 150px;
+`;
+
+const Icon = styled.Image`
+  width: 24px;
+  height: 24px;
 `;
 
 
@@ -69,12 +76,30 @@ export default function Login() {
             </TouchableOpacity>
         </View>
 
+        <Text style={{margin:20}}>or</Text>
+        <View style={styles.or}>
+          <AntDesign name="github" style={{marginRight:20}} size={24} color="rgb(75,37,134)" />
+          <Icon style={{marginRight:20}} source={require('../image/kakao.png')}/>
+          <Text style={styles.naver}>N</Text>
+        </View>
         </View>
     </Container>
   );
 };
 
 const styles = StyleSheet.create({
+    naver: {
+      backgroundColor: "#2DB400",
+      color: "white",
+      fontWeight: 900,
+      borderRadius: 3,
+      display:'flex',
+      fontSize: 18,
+      alignItems: 'center',
+      justifyContent: 'center',
+      width:24,
+      height:24
+    },
     container: {
       flex: 1,
       justifyContent: "center",
@@ -116,5 +141,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         marginTop: 5
+    },
+    or:{
+      display:'flex',
+      flexDirection: 'row',
+      alignItems: 'center'
     }
 });
