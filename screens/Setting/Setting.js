@@ -27,7 +27,7 @@ const BG = styled.Image`
 const Edit = styled.View`
   background-color: white;
   padding-top: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   height: 100%;
@@ -121,7 +121,7 @@ export default function Settings() {
           </PostColumn>
           <PostColumn>
             <Text style={styles.numColumn}>1</Text>
-            <Text>오천체육문화타운에서 농구 같이 하실 분!</Text>
+            <Text>농구 같이 하실 분!!</Text>
           </PostColumn>
         </PostBox>
       </MyPost>
@@ -213,6 +213,6 @@ const styles = StyleSheet.create({
     dlsplay:'flex',
     flexDirection: 'column',
     alignItems:'center',
-    paddingTop:110,
+    paddingTop:95,
   }
 });

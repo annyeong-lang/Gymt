@@ -105,10 +105,11 @@ export default function MoreContest(){
                       display: "flex",
                       alignItems: "center",
                       borderRightWidth: 1,
-                      borderRightColor: "#ccc"
+                      borderRightColor: "#ccc",
+                      paddingHorizontal:5
                     }}
                   >
-                    <ScrollView horizontal={true}><Text>{item.date}</Text></ScrollView>
+                    <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}><Text style={{fontSize: 13}}>{item.date}</Text></ScrollView>
                   </View>
                   <View
                     style={{
@@ -116,19 +117,21 @@ export default function MoreContest(){
                       display: "flex",
                       alignItems: "center",
                       borderRightWidth: 1,
-                      borderRightColor: "#ccc"
+                      borderRightColor: "#ccc",
+                      paddingHorizontal:5
                     }}
                   >
-                    <ScrollView horizontal={true}><Text>{item.title}</Text></ScrollView>
+                    <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}><Text style={{fontSize: 13}}>{item.title}</Text></ScrollView>
                   </View>
                   <View
                     style={{
                       width: "13%",
                       display: "flex",
-                      alignItems: "center"
+                      alignItems: "center",
+                      paddingHorizontal:5
                     }}
                   >
-                    <ScrollView horizontal={true}><Text>{item.sport}</Text></ScrollView>
+                    <ScrollView showsHorizontalScrollIndicator={false}horizontal={true}><Text style={{fontSize: 13}}>{item.sport}</Text></ScrollView>
                   </View>
                 </View>
               );

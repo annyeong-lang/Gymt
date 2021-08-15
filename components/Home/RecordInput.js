@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
     display:'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '70vw',
+    width: '80vw',
     height: '60vh',
     backgroundColor: 'white',
     padding: 20,
