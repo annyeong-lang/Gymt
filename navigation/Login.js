@@ -88,7 +88,7 @@ export default function Login() {
           <View style={styles.or}>
             <AntDesign name="github" style={{marginRight:20}} size={24} color="rgb(75,37,134)" />
             <Icon style={{marginRight:20}} source={require('../image/kakao.png')}/>
-            <Text style={styles.naver}>N</Text>
+            <Icon source={require('../image/naver.png')}/>
           </View>
           </View>
         </View>
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
       marginBottom: 3
     },
     formInput: {
-      height: 40,
+      height: 50,
       minWidth: 250,
       borderWidth: 2,
       borderColor: "black",
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     buttonStyle: {
       minWidth: 250,
       marginBottom: 5,
-      height: 40,
+      height: 50,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -159,6 +159,6 @@ const styles = StyleSheet.create({
       padding: 10,
       flexDirection: 'row',
       alignItems: 'center',
-      marginBottom:50
+      marginBottom:60
     }
 });
