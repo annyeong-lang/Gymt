@@ -79,7 +79,7 @@ export default function Settings() {
           <View style={styles.ImageName}>
             <BG source={{uri:'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_960_720.jpg'}}/>
             <View style={EditCondition? styles.hiddenCamera : styles.camera}><FontAwesome name="camera" size={22} color="black" /></View>
-            <Text style={{fontSize: 15, fontWeight: 600, marginBottom:10}}>USER NICKNAME</Text>
+            <Text style={{fontSize: 15, fontWeight: '600', marginBottom:10}}>USER NICKNAME</Text>
           </View>
           <View style={styles.formElement}>
           <SemiTitle><Entypo name="location-pin" size={24} color="rgb(120, 32, 255)" />위치</SemiTitle>
@@ -110,7 +110,7 @@ export default function Settings() {
           <MyPost>
           <View style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent: 'space-between'}}>
             <SemiTitle><MaterialCommunityIcons name="post" size={22} color="rgb(255,88,31)" /> 내가 쓴 글</SemiTitle>
-            <Text style={{fontWeight: 600, fontSize:14}}> 더보기 <AntDesign name="rightcircle" size={14} color="black" /> </Text>
+            <Text style={{fontWeight: '600', fontSize:14}}> 더보기 <AntDesign name="rightcircle" size={14} color="black" /> </Text>
           </View>
           <PostBox>
             <PostColumn>
@@ -220,7 +220,7 @@ const styles = StyleSheet.create({
   last:{
     backgroundColor: 'rgba(0,0,0,0)',
     height:'20%',
-    dlsplay:'flex',
+    display:'flex',
     flexDirection: 'column',
     alignItems:'center',
     paddingTop:25,

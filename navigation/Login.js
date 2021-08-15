@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     naver: {
       backgroundColor: "#2DB400",
       color: "white",
-      fontWeight: 900,
+      fontWeight: '900',
       borderRadius: 3,
       display:'flex',
       fontSize: 18,

@@ -72,7 +72,7 @@ export default function MoreContest(){
       <View style={styles.container}>
         <View style={styles.content}>
           <View style={styles.tableHeader}>
-            <Text style={{ display: 'flex', alignItems: 'center', fontWeight: 600, fontSize: 20, textAlign: 'center'}}><MaterialIcons name="run-circle" size={24} color="rgb(236, 159, 87)" /> 2021년 체육대회 정보</Text>
+            <Text style={{ display: 'flex', alignItems: 'center', fontWeight: '600', fontSize: 20, textAlign: 'center'}}><MaterialIcons name="run-circle" size={24} color="rgb(236, 159, 87)" /> 2021년 체육대회 정보</Text>
           </View>
           <View style={styles.tableList}>
             <View style={styles.tableRowMain}>
@@ -145,7 +145,7 @@ export default function MoreContest(){
 const styles = StyleSheet.create({
   titleText:{
     color: "white",
-    fontWeight: 500
+    fontWeight: '500'
   },
   container: {
     flex: 1,
