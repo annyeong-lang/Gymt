@@ -4,7 +4,7 @@ import styled from "styled-components/native";
 import { Dimensions } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { Picker } from '@react-native-picker/picker';
-import { MaterialCommunityIcons, Entypo } from '@expo/vector-icons';
+import { MaterialCommunityIcons, Entypo, AntDesign } from '@expo/vector-icons';
 
 const Width = Dimensions.get('window').width;
 
@@ -16,9 +16,7 @@ const Title = styled.Text`
   align-items: center;
 `;
 
-const Container = styled.View`
 
-`;
 const BG = styled.Image`
   width: ${Width / 2.5};   
   height: ${Width / 2.5};
@@ -112,7 +110,10 @@ export default function Settings() {
           </View>
 
       <MyPost>
-        <Text style={styles.semiTitle}><MaterialCommunityIcons name="post" size={22} color="rgb(255,88,31)" /> 내가 쓴 글</Text>
+        <View style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent: 'space-between'}}>
+          <Text style={styles.semiTitle}><MaterialCommunityIcons name="post" size={22} color="rgb(255,88,31)" /> 내가 쓴 글</Text>
+          <Text style={{fontWeight: 600, fontSize:14}}> 더보기 <AntDesign name="rightcircle" size={14} color="black" /> </Text>
+        </View>
         <PostBox>
           <PostColumn>
             <Text style={styles.numColumn}>번호</Text>

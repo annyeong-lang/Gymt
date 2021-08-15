@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components/native";
 import Swiper from "react-native-web-swiper";
-import { ActivityIndicator, ScrollView, Dimensions } from "react-native";
-import Title from "../../components/Title";
+import { TouchableOpacity, ActivityIndicator, ScrollView, Dimensions, Text } from "react-native";
 import Slide from "../../components/Home/Slide";
-import { FontAwesome } from '@expo/vector-icons';
+import { AntDesign, FontAwesome } from '@expo/vector-icons';
 import Border from "../../components/Home/Border"
 
 const { width: WIDTH, height: HEIGHT } = Dimensions.get("window");
@@ -17,11 +16,21 @@ const SliderContainer = styled.View`
   margin-bottom: 30px;
 `;
 
-
+const Title = styled.Text`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 5px;
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+`;
 const Container = styled.View`
   padding: 0 20px;
   flex-direction: row;
-  margin-top: 20px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
 `;
 
 const nowContest = [
@@ -51,8 +60,10 @@ export default ({ loading }) => (
     ) : (
       <>
         <Container>
-          <FontAwesome name="flag" size={24} color="green" />
-          <Title title={"대회 정보"} />
+          <Title><FontAwesome name="flag" size={24} color="green" />  대회 정보</Title>
+          <TouchableOpacity>
+            <Text style={{fontWeight: 600, fontSize:14}}> 더보기 <AntDesign name="rightcircle" size={14} color="black" /> </Text>
+          </TouchableOpacity>
         </Container>
         <SliderContainer>
           <Swiper controlsProps={{ dotsTouchable: true, prevPos: false, nextPos: false}} loop timeout={5} >
