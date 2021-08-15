@@ -7,7 +7,7 @@ export default function Location(){
         <View style= {styles.container}>
             <Text style={styles.title}>
             <MaterialIcons name="edit-location" size={24} color="black" />
-            <Text>위치별 체육관 찾기</Text>
+            <Text style={{fontFamily:'SCDream'}}>위치별 체육관 찾기</Text>
             </Text>
         <Button title="구미시"/>
         <Button title="영천시"/>
