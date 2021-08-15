@@ -2,46 +2,68 @@ import React from "react";
 import {
   StyleSheet,
   View,
-  Text
+  Text,
+  ScrollView
 } from "react-native";
-
+import { MaterialIcons } from '@expo/vector-icons';
 //나중에 json으로 바꾸든 머든
 const contestList = [
     {
+        id: 4,
+        date: '9월 10일',
+        sport: '종합',
+        title: '제32회 경기도 생활체육대축전',
+        target : '일반'
+    },
+    {
+        id: 4,
+        date: '9월 11일',
+        sport: '마라톤',
+        title: '댕댕트레킹2021',
+        target : '일반'
+    },
+    {
+        id: 4,
+        date: '9월 12일',
+        sport: '조정',
+        title: '제18회 K-water 사장배 물사랑 전국조정대회',
+        target : '중, 고, 대, 일반'
+    },
+    {
+        id: 4,
+        date: '9월 26일',
+        sport: '마라톤',
+        title: '빵빵런2021',
+        target : '일반'
+    },
+    {
         id: 1,
-        date: '2021-11-21',
+        date: '11월 21일',
         sport: '조정',
         title: '제7회 충주시장배 전국생활체육조정대회',
         target : '고, 대, 일반'
     },
     {
         id: 2,
-        date: '2021-11-21',
+        date: '11월 21일',
         sport: '조정',
         title: '제10회 충주탄금호배 전국조정대회',
         target : '중, 고, 대, 일반'
     },
     {
         id: 3,
-        date: '2021-11-14',
+        date: '11월 14일',
         sport: '조정',
         title: '제47회 장보고기 전국조정대회',
         target : '고, 대, 일반'
     },
     {
         id: 4,
-        date: '2021-11-07',
+        date: '11월 7일',
         sport: '조정',
         title: '제14회 부산광역시장배 전국조정대회',
         target : '고, 대, 일반'
-    },
-    {
-        id: 4,
-        date: '2021-09-12',
-        sport: '조정',
-        title: '제18회 K-water 사장배 물사랑 전국조정대회',
-        target : '중, 고, 대, 일반'
-    },
+    }
 ];
 
 
@@ -50,13 +72,13 @@ export default function MoreContest(){
       <View style={styles.container}>
         <View style={styles.content}>
           <View style={styles.tableHeader}>
-            <Text style={{ fontWeight: 600, fontSize: 20, textAlign: 'center'}}>2021년 체육대회 정보</Text>
+            <Text style={{ display: 'flex', alignItems: 'center', fontWeight: 600, fontSize: 20, textAlign: 'center'}}><MaterialIcons name="run-circle" size={24} color="rgb(236, 159, 87)" /> 2021년 체육대회 정보</Text>
           </View>
           <View style={styles.tableList}>
             <View style={styles.tableRowMain}>
               <View
                 style={{
-                  width: "15%",
+                  width: "17%",
                   display: "flex",
                   alignItems: "center"
                 }}
@@ -64,45 +86,49 @@ export default function MoreContest(){
                 <Text style={styles.titleText}>날짜</Text>
               </View>
               <View
-                style={{ width: "65%", display: "flex", alignItems: "center" }}
+                style={{ width: "70%", display: "flex", alignItems: "center" }}
               >
                 <Text style={styles.titleText}>제목</Text>
               </View>
               <View
-                style={{ width: "20%", display: "flex", alignItems: "center" }}
+                style={{ width: "13%", display: "flex", alignItems: "center" }}
               >
-                <Text style={styles.titleText}>대상</Text>
+                <Text style={styles.titleText}>종목</Text>
               </View>
             </View>
-            {Array.apply(0, Array(8)).map(function (x, i) {
+            {contestList.map( function (item) {
               return (
-                <View style={styles.tableRow} key={i}>
+                <View style={styles.tableRow} key={item.id}>
                   <View
                     style={{
-                      width: "15%",
+                      width: "17%",
                       display: "flex",
-                      alignItems: "center"
+                      alignItems: "center",
+                      borderRightWidth: 1,
+                      borderRightColor: "#ccc"
                     }}
                   >
-                    <Text>Icons</Text>
+                    <ScrollView horizontal={true}><Text>{item.date}</Text></ScrollView>
                   </View>
                   <View
                     style={{
-                      width: "65%",
+                      width: "70%",
                       display: "flex",
-                      alignItems: "center"
+                      alignItems: "center",
+                      borderRightWidth: 1,
+                      borderRightColor: "#ccc"
                     }}
                   >
-                    <Text>Portal user</Text>
+                    <ScrollView horizontal={true}><Text>{item.title}</Text></ScrollView>
                   </View>
                   <View
                     style={{
-                      width: "20%",
+                      width: "13%",
                       display: "flex",
                       alignItems: "center"
                     }}
                   >
-                    <Text>Testing</Text>
+                    <ScrollView horizontal={true}><Text>{item.sport}</Text></ScrollView>
                   </View>
                 </View>
               );

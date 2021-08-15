@@ -9,10 +9,10 @@ const Stacks=createStackNavigator();
 export default function HomeEntry(){
     return(
        <Stacks.Navigator>
-
-<Stacks.Screen  
+        <Stacks.Screen  
             options={{headerShown : false}}
             name="Home" component={Home} />
+
         <Stacks.Screen
             name="MoreContest"
             options={{
