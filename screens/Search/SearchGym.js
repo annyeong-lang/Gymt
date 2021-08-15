@@ -9,11 +9,23 @@ const Stacks=createStackNavigator();
 export default function SearchGym(){
  
     return(
-       <Stacks.Navigator
-             screenOptions={
-              {headerShown : false}} >
-        <Stacks.Screen name="Search" component={Search} />
-        <Stacks.Screen name="SearchResult" component={SearchResult} /> 
+       <Stacks.Navigator>
+        <Stacks.Screen
+            name="Search" 
+            options={{headerShown : false}}
+            component={Search} />
+        <Stacks.Screen name="SearchResult"
+            options={{
+                  title: "검색 결과",
+                  headerStyle: {
+                  backgroundColor: 'rgba(12, 144, 125, 1)'
+                  },
+                  headerTintColor: '#fff',
+                  headerTitleStyle: {
+                  fontWeight: 'bold',
+                  },
+            }}
+            component={SearchResult} /> 
        </Stacks.Navigator>
     
     
