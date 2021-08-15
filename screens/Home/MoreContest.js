@@ -72,7 +72,7 @@ export default function MoreContest(){
       <View style={styles.container}>
         <View style={styles.content}>
           <View style={styles.tableHeader}>
-            <Text style={{ display: 'flex', alignItems: 'center', fontWeight: '600', fontSize: 20, textAlign: 'center'}}><MaterialIcons name="run-circle" size={24} color="rgb(236, 159, 87)" /> 2021년 체육대회 정보</Text>
+            <Text style={{ display: 'flex', alignItems: 'center', fontFamily:'SCDream', fontWeight: '600', fontSize: 20, textAlign: 'center'}}><MaterialIcons name="run-circle" size={24} color="rgb(236, 159, 87)" /> 2021년 체육대회 정보</Text>
           </View>
           <View style={styles.tableList}>
             <View style={styles.tableRowMain}>
@@ -109,7 +109,7 @@ export default function MoreContest(){
                       paddingHorizontal:5
                     }}
                   >
-                    <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}><Text style={{fontSize: 13}}>{item.date}</Text></ScrollView>
+                    <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}><Text style={{fontFamily:'SCDream', fontSize: 13}}>{item.date}</Text></ScrollView>
                   </View>
                   <View
                     style={{
@@ -121,7 +121,7 @@ export default function MoreContest(){
                       paddingHorizontal:5
                     }}
                   >
-                    <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}><Text style={{fontSize: 13}}>{item.title}</Text></ScrollView>
+                    <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}><Text style={{fontFamily:'SCDream', fontSize: 13}}>{item.title}</Text></ScrollView>
                   </View>
                   <View
                     style={{
@@ -131,7 +131,7 @@ export default function MoreContest(){
                       paddingHorizontal:5
                     }}
                   >
-                    <ScrollView showsHorizontalScrollIndicator={false}horizontal={true}><Text style={{fontSize: 13}}>{item.sport}</Text></ScrollView>
+                    <ScrollView showsHorizontalScrollIndicator={false}horizontal={true}><Text style={{fontFamily:'SCDream', fontSize: 13}}>{item.sport}</Text></ScrollView>
                   </View>
                 </View>
               );
@@ -145,6 +145,7 @@ export default function MoreContest(){
 const styles = StyleSheet.create({
   titleText:{
     color: "white",
+    fontFamily:'SCDream',
     fontWeight: '500'
   },
   container: {

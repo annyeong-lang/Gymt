@@ -4,6 +4,7 @@ import Summary from "./summary"
 import {NativeBaseProvider,Center,ScrollView,Fab, Icon, Box} from "native-base"
 import { TouchableOpacity } from "react-native";
 import { Entypo } from '@expo/vector-icons'; 
+import { useFonts } from 'expo-font';
 
 export default function CommunityHomeScreen({navigation}){
   const [word,setWord]=useState("");
@@ -22,7 +23,13 @@ export default function CommunityHomeScreen({navigation}){
   const go=()=>{
     return(navigation.navigate("w"))
   }
-
+  //font
+  const [loaded] = useFonts({
+    SCDream: require('../../assets/fonts/SCDream3.otf'),
+  });
+  if (!loaded) {
+    return null;
+  }
   return(
      <NativeBaseProvider>
      <Center pt={10} width="100%" px={4} bg="white">

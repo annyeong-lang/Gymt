@@ -12,13 +12,14 @@ export default function Summary ({sports,location,id,comments,title,date,looks})
         px={1}
         py={1}
         rounded="md"
-       _text={
-         {
-         color:"white",
-         fontSize: "md",
-         fontWeight: "500",
-         }
-         }
+        _text={
+          {
+          fontFamily: "SCDream",
+          color:"white",
+          fontSize: "md",
+          fontWeight: "500",
+          }
+        }
       >{item}</Center>
     )
   }
@@ -28,18 +29,19 @@ export default function Summary ({sports,location,id,comments,title,date,looks})
         <HStack>
               <Keywords item={sports} />
               <Keywords item={location} />
-          </HStack>
+        </HStack>
       <VStack>
       <Text px={5}
-           py={3}
-           fontSize="lg">{title}</Text>
+          py={3}
+          fontSize="lg"
+          style={{fontFamily: "SCDream"}}
+      >{title}</Text>
       <HStack space={8} mx={4} mt={1}>
         <Text 
-        px={2}
-           py={1}
-           fontSize= "xs"
-           
-              >작성자 : {id}</Text>
+          px={2}
+          py={1}
+          fontSize= "xs"
+        >작성자 : {id}</Text>
         <Text px={1} 
            py={1}   
            position="absolute" right={3}       
