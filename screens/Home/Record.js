@@ -64,6 +64,7 @@ export default function Record() {
           onAddRecord={addRecordHandler}
           onCancel={cancelRecordAdditionHandler}
         />
+        {
         <FlatList
           keyExtractor={(item) => item.id}
           data={courseRecords}
@@ -82,6 +83,7 @@ export default function Record() {
             );
           }}
         />
+        }
       <View style={styles.container}>
         <TouchableOpacity onPress={() => setIsAddMode(true)} >
           <Entypo name="circle-with-plus" size={34} color="rgb(236, 159, 87)" />

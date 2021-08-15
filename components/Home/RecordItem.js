@@ -21,14 +21,15 @@ export default function RecordItem(props) {
   return (
     <>
       <Health_record>
-      <View style={{display:'flex', width: '85%', flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>          <BG source={ImageList[props.iconId-1]} />
-      <Text>{props.startHour}:{props.startMin} - {props.endHour}:{props.endMin}</Text>
+        <View style={{display:'flex', width: '85%', flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
+          <BG source={ImageList[props.iconId-1]} />
+          <Text>{props.startHour}:{props.startMin} - {props.endHour}:{props.endMin}</Text>
           <Text>{props.total}시간</Text>
         </View>
         <TouchableOpacity
-          style={{width: '15%', display:'flex', alignItems:'flex-end'}}
-          activeOpacity={0.8}
-          onPress={props.onDelete.bind(this, props.id)}
+            style={{width: '15%', display:'flex', alignItems:'flex-end'}}
+            activeOpacity={0.8}
+            onPress={props.onDelete.bind(this, props.id)}
         >
           <FontAwesome name="trash" size={15} color="grey" />
         </TouchableOpacity>
