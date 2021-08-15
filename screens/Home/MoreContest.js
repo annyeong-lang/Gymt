@@ -158,8 +158,8 @@ const styles = StyleSheet.create({
     borderColor: "#ccc",
     borderRadius: 20,
     borderWidth: 1,
-    marginHorizontal: 20,
-    paddingHorizontal: 15,
+    marginHorizontal: 10,
+    paddingHorizontal: 10,
     paddingBottom:20
   },
   tableHeader: {

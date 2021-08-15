@@ -5,7 +5,6 @@ import styled from "styled-components/native";
 const Weather_container = styled.View`
   padding: 10px 0px;  
   padding-bottom: 20px;
-  <!--background-color: rgb(240, 240, 240);-->
   margin: 0 20px;
   border-radius: 25px;
   display: flex;
@@ -28,9 +27,9 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    width: 190,
-    height: 190,
-    borderRadius: 100,
+    width: '100%',
+    height: 100,
+    borderRadius: 10,
     backgroundColor: 'rgb(240, 240, 240)'
   }
 });

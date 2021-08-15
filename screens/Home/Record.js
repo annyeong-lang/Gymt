@@ -20,8 +20,9 @@ const Today = styled.Text`
 
 const Container = styled.View`
   padding: 0 20px;
+  display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: space-between;
   margin-top: 20px;
   margin-bottom: 10px;
 `;
@@ -29,15 +30,6 @@ const Container = styled.View`
 const PlusIcon = styled.View`
     margin: 20px 60px;
 `;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-});
 
 export default function Record() {
   const [courseRecords, setCourseRecords] = useState([]);
@@ -64,9 +56,12 @@ export default function Record() {
   return (
     <div>
       <Container>
-        <FontAwesome name="heartbeat" size={20} color="red" />
-        <Title title={"운동 기록"} />
-        <Today>{date.getMonth() + 1}월 {date.getDate()}일</Today>
+        <View style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
+          <FontAwesome name="heartbeat" size={20} color="red" />
+          <Title title={"운동 기록"} />
+          <Today>{date.getMonth() + 1}월 {date.getDate()}일</Today>
+        </View>
+        <FontAwesome style={{marginRight: 10}} name="calendar" size={22} color="black" />
       </Container>
         <RecordInput
           visible={isAddMode}
@@ -103,3 +98,12 @@ export default function Record() {
     </div>
  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
+});
