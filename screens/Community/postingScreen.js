@@ -3,7 +3,7 @@ import {
   Input,
   Button,Box,
   NativeBaseProvider,
-  HStack,Icon,Divider,
+  Icon,Divider,
   Center
 } from 'native-base';
 import React ,{useState} from 'react';
@@ -34,13 +34,13 @@ export default function PostingScreen({navigation})
   return(
     <NativeBaseProvider>
    <ScrollView>
- <Box mt={6} ml={18} >
+ <Box pt={6} pl={20} m={0} bg="white">
    <TouchableOpacity onPress={onPress}><Icon as={<Ionicons name="arrow-back-circle-outline" color="black" />} size="lg" ></Icon>
    </TouchableOpacity></Box>
-    <Center mt={8}>
+    <Center m={0} pt={10} bg="white">
     <PostingElement />
     <Divider my={4}  />
-    <Center width="80%" bg="purple.300" rounded={8} _text={{color:"white",fontSize:"lg"}} h={8}>댓글</Center>
+    <Center width="80%" bg="purple.300" rounded={8} _text={{color:"white",fontSize:"lg"}} h={10}>댓글</Center>
     <VStack p={2} rounded={8} width="80%" bg="white">
     <ShowComments clist={clist} />
      <Input placeholder="댓글을 입력하세요"

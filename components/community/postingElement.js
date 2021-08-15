@@ -1,9 +1,7 @@
 import {
     VStack,
-    Input,
-    Button,Box,Text,
-    NativeBaseProvider,
-    HStack,Icon,Divider,
+    Box,Text,
+    HStack,
     Center
   } from 'native-base';
   import React from 'react';

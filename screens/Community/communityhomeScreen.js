@@ -25,10 +25,10 @@ export default function CommunityHomeScreen({navigation}){
 
   return(
      <NativeBaseProvider>
-     <Center mt={10} width="100%" px={4}>
+     <Center pt={10} width="100%" px={4} bg="white">
      <SearchBar word={word}  handle={filtering} />
      </Center>
-    <ScrollView px={4}>
+    <ScrollView px={4} m={0} bg="white">
         {
           list.map((cur)=>{
             return(
@@ -47,7 +47,7 @@ export default function CommunityHomeScreen({navigation}){
           })
         }
     </ScrollView>
-    <Box position="relative" h={100} w="100%">
+    <Box position="relative" h={100} w="100%" bg="white">
       <Fab
         position="absolute"
         size="sm"
@@ -121,3 +121,4 @@ const Plists=[
     contents: "배드민턴 같이 하실 분 찾아요"
   }
 ]
+

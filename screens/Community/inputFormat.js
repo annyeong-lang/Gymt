@@ -13,7 +13,7 @@ export default function Inputs ({inputs,onChange,onSubmit}) {
   const lo=["포항시","경주시","김천시","안동시","구미시","영주시","영천시"]
 
   return (
-      <Center mt={10}>
+      <Center pt={10} m={0} bg="white">
       <VStack width="80%" space={1}>
       <HStack alignItems="center" space={2} >
         <Center ml={-1} width={10}>종목</Center>

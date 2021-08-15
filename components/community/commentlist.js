@@ -1,5 +1,5 @@
 import React from 'react';
-import {Center,VStack,Box,HStack,Icon,Text} from "native-base"
+import {Center,VStack,HStack,Icon,Text} from "native-base"
 import { FontAwesome } from '@expo/vector-icons';
 export default function ShowComments({clist=[""]})
 {
