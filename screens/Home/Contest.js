@@ -67,7 +67,7 @@ export default function Contest ({ loading }) {
       ) : (
         <>
           <Container>
-            <Title><FontAwesome name="flag" size={24} color="green" />
+            <Title><FontAwesome name="flag" size={20} color="green" />
             <Text style={{fontSize:16, fontWeight:'600', fontFamily:'SCDream'}}> 대회 정보</Text></Title>
             <TouchableOpacity onPress={() => {navigation.navigate('MoreContest')}}>
               <Text style={{fontWeight: '600', fontSize:14, fontFamily:'SCDream'}}> 더 많은 대회 보기 <AntDesign name="rightcircle" size={14} color="black" /> </Text>

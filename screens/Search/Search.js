@@ -18,6 +18,7 @@ import { StyleSheet, View, TouchableOpacity, Text, Image, Button } from "react-n
 import styled from "styled-components/native";
 import { flex, fontWeight, marginTop } from "styled-system";
 import { useNavigation } from "@react-navigation/native";
+import { MaterialIcons } from '@expo/vector-icons';
 
 const Icon = styled.Image`
   width: 40px;
@@ -43,10 +44,8 @@ const Icon = styled.Image`
 const Container = styled.View`
   width: 100%;
   height: 100%;
-  left-margin: 30px;
-  backgroundColor: '#ffffff';
-  margin-top: 30;
-  
+  background-color: rgb(255,255,255);
+  padding-top: 15px;
 `;
 
 const Button2 = (props) => {
@@ -62,7 +61,9 @@ export default function Search(){
     return (
       <Container>
         <View style={styles.group}>
-          <Text style={styles.title}>종목별 체육관 찾기</Text>
+          <View style={{flexDirection:'row', alignItems:'center'}}>
+            <MaterialIcons name="sports" size={24} color="rgb(236, 159, 87)" />
+            <Text style={styles.title}> 종목별 체육관 찾기</Text></View>
           <View style={styles.row}>
             <TouchableOpacity style={styles.buttonStyle}>
               <Icon source={require("../../image/soccer.png")}></Icon>
@@ -87,7 +88,10 @@ export default function Search(){
           </View>
         </View>
         <View style={styles.group}>
-          <Text style={styles.title}>위치별 체육관 찾기</Text>
+          <View style={{flexDirection:'row', alignItems:'center'}}>
+            <MaterialIcons name="edit-location" size={24} color="rgb(236, 159, 87)" />
+            <Text style={styles.title}> 위치별 체육관 찾기</Text>
+          </View>
           <View style={styles.row1}>
             <Button2 name="구미시"></Button2>
             <Button2 name="포항시"></Button2>
@@ -135,41 +139,41 @@ export default function Search(){
 
   const styles = StyleSheet.create({
     title: {
-      fontSize: 24,
-      fontWeight: "bold",
-      fontFamily:'SCDream',
+      fontSize: 18,
+      fontWeight: "400",
+      fontFamily:'SCDream'
     },
     row: {
+      display: "flex",
       flexDirection: "row",
       // height : 100,
-      justifyContent: "flex",
-      alignItems: "center",
+      justifyContent: "space-between",
     },
     row1: {
       flexDirection: "row",
       // height : 100,
-      marginTop: 10,
-      justifyContent: "flex",
-      alignItems: "end"
+      marginTop: 20,
+      justifyContent: "center",
+      alignItems: "flex-end"
     },
     row2: {
       flexDirection: "row",
       // height : 100,
       justifyContent: "center",
-      alignItems: "end",
+      alignItems: "flex-end",
       // alignContent:"center",
       // marginTop: 30,
-      marginTop: 250
+      marginTop: 230
       
     },
     group: {
       height: 110,
-      margin: 30
+      marginVertical: 30,
+      marginHorizontal: 15
     },
     buttonStyle: {
-      width: 80,
-      height: 90,
-      margin: 3,
+      width: '19%',
+      height: 80,
       marginTop: 20,
       display: 'flex',
       alignItems: 'center',
@@ -180,8 +184,8 @@ export default function Search(){
       borderRadius: 5
     },
     buttonStyle2: {
-      width: 90,
-      height: 50,
+      width: '19%',
+      height: 40,
       margin: 2,
       // marginTop: 2,
       display: 'flex',
@@ -193,8 +197,8 @@ export default function Search(){
       // borderRadius: 5
     },
     buttonText: {
-      fontSize: 16,
-      fontWeight: "bold",
+      fontSize: 13,
+      fontWeight: "400",
       fontFamily:'SCDream'
     },
     button3: {
@@ -210,8 +214,8 @@ export default function Search(){
       // marginLeft: '50%'
     },
     buttonText2: {
-      fontSize: 22,
-      fontWeight: "bold",
+      fontSize: 18,
+      fontWeight: "400",
       fontFamily:'SCDream',
     }
   })
