@@ -68,7 +68,7 @@ export default function SearchResult(){
       <Container>
         <View style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
           <AntDesign name="rightcircle" size={20} color="rgb(236, 159, 87)" />
-          <Title title={"체육관 결과"} />
+          <Text style={{fontSize:16, fontWeight:'600', fontFamily:'SCDream'}}> 체육관 결과</Text>
         </View>
         <TouchableOpacity onPress={()=>setColor(!color)}>
           {color?

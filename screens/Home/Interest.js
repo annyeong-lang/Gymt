@@ -2,8 +2,8 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import styled from "styled-components/native";
-import Title from "../../components/Title";
 import { AntDesign, FontAwesome, Feather } from '@expo/vector-icons';
+import Title from '../../components/Title';
 
 const TextBox = styled.Text`
     display: flex;
@@ -16,8 +16,8 @@ const SemiTitle = styled.Text`
     font-weight: 600;
     margin-bottom: 5px;
     font-Family:'SCDream';
-
 `;
+
 const Container = styled.View`
   padding: 0 20px;
   align-items: center;
@@ -48,7 +48,7 @@ export default () => (
     <View>
       <Container>
         <AntDesign name="star" size={20} color="rgb(255, 194, 81)" />
-        <Title title={"관심 체육관"} />
+        <Text style={{fontSize:16, fontWeight:'600', fontFamily:'SCDream'}}> 관심 체육관</Text>
       </Container>
       <BG source={require('../../image/체육관.jpg')} />
       <Interested_content>

@@ -14,8 +14,8 @@ const styles = StyleSheet.create({
 export default () => (
   <ScrollView style={styles.container} showsHorizontalScrollIndicator={false} >
       <Contest />
-      <Record />
       <WeatherApi />
+      <Record />
       <Interest />
   </ScrollView> 
 );
