@@ -20,7 +20,7 @@ export default function SearchBar({word,handle}){
             <IconButton
            
                 variant="solid"
-                bg="purple.400"
+                bg="#0c907d"
                 icon={<Icon size="sm"  
                             as={<AntDesign name="search1" />} 
                             color="white" />

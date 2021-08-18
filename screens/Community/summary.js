@@ -8,7 +8,7 @@ export default function Summary ({sports,location,id,comments,title,date,looks})
     return(
       <Center mx={2} my={1} 
         width={20} h={8}
-        bg="purple.400"
+        bg="#0c907d"
         px={1}
         py={1}
         rounded="md"
@@ -25,7 +25,7 @@ export default function Summary ({sports,location,id,comments,title,date,looks})
   }
   return(
     <Center py={2} bg="white" px={2} m={0}>
-      <Box bg="purple.50" rounded="md" py={1} width="100%">
+      <Box bg="gray.100"  rounded="lg" py={1} width="100%">
         <HStack>
               <Keywords item={sports} />
               <Keywords item={location} />

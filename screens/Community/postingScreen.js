@@ -40,7 +40,7 @@ export default function PostingScreen({navigation})
     <Center m={0} pt={10} bg="white">
     <PostingElement />
     <Divider my={4}  />
-    <Center width="80%" bg="purple.300" rounded={8} _text={{color:"white",fontSize:"lg"}} h={10}>댓글</Center>
+    <Center width="80%" bg="#0c907d" rounded={8} _text={{color:"white",fontSize:"lg"}} h={10}>댓글</Center>
     <VStack p={2} rounded={8} width="80%" bg="white">
     <ShowComments clist={clist} />
      <Input placeholder="댓글을 입력하세요"
@@ -50,8 +50,8 @@ export default function PostingScreen({navigation})
             InputRightElement={
            <Button
                   onPress={onSubmit} 
-                  bg="purple.300">
-                      <Icon size="sm" as={<FontAwesome name="send" size={24} />} color="white" />
+                  bg="white">
+                      <Icon size="sm" as={<FontAwesome name="send" size={24} />} color="#0c907d" />
                     
                 </Button>
             }

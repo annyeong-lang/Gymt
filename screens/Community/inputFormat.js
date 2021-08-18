@@ -16,7 +16,7 @@ export default function Inputs ({inputs,onChange,onSubmit}) {
       <Center pt={10} m={0} bg="white">
       <VStack width="80%" space={1}>
       <HStack alignItems="center" space={2} >
-        <Center ml={-1} width={10}>종목</Center>
+        <Center ml={-1} width={10} _text={{color:"#0c907d" ,bold:"true"}}>종목</Center>
         <Select SelectedValue={inputs.sports}
                    width="40%"
                    minWidth={20}
@@ -29,7 +29,7 @@ export default function Inputs ({inputs,onChange,onSubmit}) {
         </Select>
       </HStack>
       <HStack alignItems="center" space={2} >
-        <Center ml={-1} pl={-2}width={10}>위치</Center>
+        <Center ml={-1} pl={-2}width={10} _text={{color:"#0c907d",bold:"true"}}>위치</Center>
         <Select SelectedValue={inputs.location}
                    width="40%"
                    minWidth={20}
@@ -42,7 +42,7 @@ export default function Inputs ({inputs,onChange,onSubmit}) {
         </Select>
       </HStack>
       <HStack pl={3}space={3}>
-      <Center>id</Center> 
+      <Center _text={{color:"#0c907d",bold:"true"}}>id</Center> 
       <Input  
            placeholder="작성자" 
            width="40%"
@@ -52,7 +52,7 @@ export default function Inputs ({inputs,onChange,onSubmit}) {
            onChange={onChange}/>
       </HStack>
       <HStack pl={1} space={2}>
-      <Center>제목</Center>
+      <Center _text={{color:"#0c907d",bold:"true"}}>제목</Center>
       <Input placeholder="제목" 
              width="85%"
              value={inputs.title}
@@ -65,7 +65,7 @@ export default function Inputs ({inputs,onChange,onSubmit}) {
                 value={inputs.contents}
                 onChange={onChange}/>
       <Center>{time}</Center>
-      <Button  onPress={onSubmit} bg="purple.300" _text={{color:"white"}}>작성</Button>
+      <Button  onPress={onSubmit} bg="#0c907d" _text={{color:"white"}}>작성</Button>
       </VStack>
       </Center>
   )

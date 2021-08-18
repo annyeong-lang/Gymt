@@ -22,7 +22,7 @@ import {
     function Sett({label,value}){
       return(
         <HStack  rounded={4}>
-          <Center m={0} px={2} w={16} py={2} bg="purple.300" rounded={4}><Text color="white" fontSize="md">{label}</Text></Center>
+          <Center m={0} px={2} w={16} py={2} bg="white" rounded={4}><Text color="#0c907d" bold fontSize="md">{label}</Text></Center>
           <Center  m={0} px={2}  py={1}  rounded={4}><Text fontSize="lg">{value}</Text></Center>
         </HStack>
       )
