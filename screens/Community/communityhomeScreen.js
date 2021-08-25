@@ -41,6 +41,7 @@ export default function CommunityHomeScreen({navigation}){
             return(
               <TouchableOpacity onPress={touch}>
               <Summary 
+                       key={cur.id} // 경고창 없애려고 추가했어요
                        sports={cur.sports}
                        id={cur.id}
                        title={cur.title}

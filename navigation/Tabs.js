@@ -10,16 +10,7 @@ import { Entypo } from '@expo/vector-icons';
 
 const Tabs = createBottomTabNavigator();
 
-const getHeaderName = route =>
-  route?.state?.routeNames[route.state.index] || "홈 화면";
-
-export default ({ navigation, route }) => {
-  useLayoutEffect(() => {
-    const name = getHeaderName(route);
-    navigation.setOptions({
-      title: name
-    });
-  }, [route]);
+export default () => {
   return (
 <Tabs.Navigator
       screenOptions={({ route }) => ({
