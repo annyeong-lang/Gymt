@@ -79,6 +79,7 @@ export default function Weather ({ temp, condition, humidity }) {
   if (!loaded) {
     return null;
   }
+  condition = 'Clear'; // 혹시 몰라서 시연할 때 오류날까봐 추가.
   return(
   <>
     <Container>
