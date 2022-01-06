@@ -1,13 +1,11 @@
 import React from "react"
-
 import { createStackNavigator } from '@react-navigation/stack';
 import Search from "./Search";
 import SearchResult from "../SearchResult/SearchResult";
 
 const Stacks=createStackNavigator();
 
-export default function SearchGym(){
- 
+export default function SearchGym( props ){    
     return(
        <Stacks.Navigator>
         <Stacks.Screen

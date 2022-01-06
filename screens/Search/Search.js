@@ -1,22 +1,6 @@
-// import React from "react";
-// import { ScrollView } from "react-native";
-// import Athlete from "./Athlete";
-// import Location from "./Location";
-// import SearchButt from "./SearchButt";
-// // import SearchResult from "../SearchResult/SearchResult";
-
-// export default () => (
-//   <ScrollView showsHorizontalScrollIndicator={false} >
-//     <Athlete></Athlete>
-//     <Location></Location>
-//     <SearchButt></SearchButt>
-//   </ScrollView>
-// );
-
 import React, { useState } from "react";
 import { StyleSheet, View, TouchableOpacity, Text, Image, Button } from "react-native";
 import styled from "styled-components/native";
-import { flex, fontWeight, marginTop } from "styled-system";
 import { useNavigation } from "@react-navigation/native";
 import { MaterialIcons } from '@expo/vector-icons';
 
@@ -25,21 +9,6 @@ const Icon = styled.Image`
   height: 40px;
   margin: 5px
 `;
-// const Button1 = styled.Button`
-//   width: 60,
-//   height: 70,
-//   border-radius : 5
-//   `
-// const View = styled.View`
-//   flex: 1,
-//   height:100,
-//   justifyContent: 'center,
-//   alignItems:'center'
-// `
-// const Text= styled.Text`
-//   font-size : 15,
-//   font-weight: bold
-// `
 
 const Container = styled.View`
   width: 100%;
@@ -128,7 +97,12 @@ export default function Search(){
         </View>
 
         <View style={styles.row2}>
-          <TouchableOpacity style={styles.button3} onPress={() => navigation.navigate('SearchResult')}>
+          <TouchableOpacity style={styles.button3} onPress={() => navigation.navigate('SearchResult', 
+            {
+              kind: "축구",
+              location: "구미시",
+            })
+          }>
             <Text style={styles.buttonText2}>체육관 검색</Text>
           </TouchableOpacity>
         </View>
