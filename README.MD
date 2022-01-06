@@ -16,12 +16,13 @@
   
 ## 홈 화면
   
-![스크린샷(467)](https://user-images.githubusercontent.com/71166763/130786521-c983e2be-38d6-45bd-8dd6-be0c5f6b5933.png)
+![130786521-c983e2be-38d6-45bd-8dd6-be0c5f6b5933](https://user-images.githubusercontent.com/71166763/148412132-7ef68ec8-6fa2-46ae-bc83-c6d88acbf3f0.png)
   
   
 ## 체육관 검색
   
-![스크린샷(469)](https://user-images.githubusercontent.com/71166763/130786723-881d71ab-b136-4751-9853-c9c3b9b469c3.png)
+![130786723-881d71ab-b136-4751-9853-c9c3b9b469c3](https://user-images.githubusercontent.com/71166763/148412201-13d25b8c-7147-43d9-8569-6f8204ac109c.png)
+
 
   
 ## 커뮤니티
