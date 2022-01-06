@@ -6,8 +6,11 @@ import {
   ScrollView
 } from "react-native";
 import { MaterialIcons } from '@expo/vector-icons';
-//나중에 json으로 바꾸든 머든
-const contestList = [
+import { db } from "../../config";
+import { collection, getDocs } from "../../node_modules/firebase/firestore";
+
+let contestList = [
+  /**
     {
         id: 1,
         date: '9월 10일',
@@ -63,13 +66,28 @@ const contestList = [
         sport: '조정',
         title: '제14회 부산광역시장배 전국조정대회',
         target : '고, 대, 일반'
-    }
+    } */
 ];
+
+async function dbContest(contestList) {
+  const querySnapshot = await getDocs(collection(db, "contest"));
+  querySnapshot.forEach((doc) => {
+    contestList.push({
+      id : doc.data().id,
+      date : doc.data().date,
+      title: doc.data().title,
+      sport : doc.data().kinds,
+    });    
+  });  
+}
+dbContest(contestList);
 
 
 export default function MoreContest(){
+  
+
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={styles.content}>
           <View style={styles.tableHeader}>
             <Text style={{ display: 'flex', alignItems: 'center', fontFamily:'SCDream', fontWeight: '600', fontSize: 20, textAlign: 'center'}}><MaterialIcons name="run-circle" size={24} color="rgb(236, 159, 87)" /> 2021년 체육대회 정보</Text>
@@ -138,7 +156,7 @@ export default function MoreContest(){
             })}
           </View>
         </View>
-      </View>
+      </ScrollView>
     );
 }
 
@@ -152,6 +170,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 5,
     paddingTop: 35,
+    marginBottom: 35,
     backgroundColor: "#F2F2F2"
   },
   content: {
