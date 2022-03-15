@@ -1,6 +1,6 @@
 # 🏃‍♀️Gymt
 <img src="https://img.shields.io/badge/React Native-61DAFB?style=flat-square&logo=React&logoColor=white"/> <img src="https://img.shields.io/badge/Expo-000020?style=flat-square&logo=Expo&logoColor=white"/> <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=Firebase&logoColor=white"/>  
-![main](https://user-images.githubusercontent.com/71166763/130784205-51621b28-3640-4217-b091-5ee94857b321.png)
+![프레젠테이션2](https://user-images.githubusercontent.com/71166763/158455278-0bd04070-e386-4711-87d8-69d28dfee9f7.png)
 > **체육관 정보(종목, 가격, 운영 시간 등)를 검색하고 같이 운동할 사람을 구할 수 있는 공공체육시설 모바일 앱.**  
 > **부가적으로 대회 정보나 날씨, 커뮤니티 기능 등을 제공한다.**    
   
@@ -11,7 +11,8 @@
   - <a href="https://www.data.go.kr/data/3071412/fileData.do">경상북도_구미시_주요체육시설정보</a>
 ## Login 화면
   
-![스크린샷(475)](https://user-images.githubusercontent.com/71166763/130786230-929a76b8-649f-4b0b-8043-7b1318661993.png)
+![130786230-929a76b8-649f-4b0b-8043-7b1318661993](https://user-images.githubusercontent.com/71166763/158455321-9dd337e3-b54a-4347-b63d-e5868b160dd5.png)
+
 
   
 ## 홈 화면
