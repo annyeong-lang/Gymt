@@ -21,6 +21,8 @@
     "expo-linear-gradient": "^9.2.0",
     "expo-location": "^12.1.2",
     "expo-status-bar": "~1.0.4",
+    "firebase": "^9.6.1",
+    "firestore-export-import": "^0.17.0",
     "native-base": "^3.0.7",
     "prop-types": "^15.7.2",
     "react": "16.13.1",
@@ -45,6 +47,6 @@
     "assets": [
       "src/assets/fonts"
     ]
-   },
+  },
   "private": true
 }

@@ -6,70 +6,30 @@ import {
   ScrollView
 } from "react-native";
 import { MaterialIcons } from '@expo/vector-icons';
-//나중에 json으로 바꾸든 머든
-const contestList = [
-    {
-        id: 1,
-        date: '9월 10일',
-        sport: '종합',
-        title: '제32회 경기도 생활체육대축전',
-        target : '일반'
-    },
-    {
-        id: 2,
-        date: '9월 11일',
-        sport: '마라톤',
-        title: '댕댕트레킹2021',
-        target : '일반'
-    },
-    {
-        id: 3,
-        date: '9월 12일',
-        sport: '조정',
-        title: '제18회 K-water 사장배 물사랑 전국조정대회',
-        target : '중, 고, 대, 일반'
-    },
-    {
-        id: 4,
-        date: '9월 26일',
-        sport: '마라톤',
-        title: '빵빵런2021',
-        target : '일반'
-    },
-    {
-        id: 5,
-        date: '11월 21일',
-        sport: '조정',
-        title: '제7회 충주시장배 전국생활체육조정대회',
-        target : '고, 대, 일반'
-    },
-    {
-        id: 6,
-        date: '11월 21일',
-        sport: '조정',
-        title: '제10회 충주탄금호배 전국조정대회',
-        target : '중, 고, 대, 일반'
-    },
-    {
-        id: 7,
-        date: '11월 14일',
-        sport: '조정',
-        title: '제47회 장보고기 전국조정대회',
-        target : '고, 대, 일반'
-    },
-    {
-        id: 8,
-        date: '11월 7일',
-        sport: '조정',
-        title: '제14회 부산광역시장배 전국조정대회',
-        target : '고, 대, 일반'
-    }
-];
+import { db } from "../../config";
+import { collection, getDocs } from "../../node_modules/firebase/firestore";
+
+let contestList = [];
+
+async function dbContest(contestList) {
+  const querySnapshot = await getDocs(collection(db, "contest"));
+  querySnapshot.forEach((doc) => {
+    contestList.push({
+      id : doc.data().id,
+      date : doc.data().date,
+      title: doc.data().title,
+      sport : doc.data().kinds,
+    });    
+  });  
+}
+dbContest(contestList);
 
 
 export default function MoreContest(){
+  
+
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={styles.content}>
           <View style={styles.tableHeader}>
             <Text style={{ display: 'flex', alignItems: 'center', fontFamily:'SCDream', fontWeight: '600', fontSize: 20, textAlign: 'center'}}><MaterialIcons name="run-circle" size={24} color="rgb(236, 159, 87)" /> 2021년 체육대회 정보</Text>
@@ -138,7 +98,7 @@ export default function MoreContest(){
             })}
           </View>
         </View>
-      </View>
+      </ScrollView>
     );
 }
 
@@ -152,6 +112,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 5,
     paddingTop: 35,
+    marginBottom: 35,
     backgroundColor: "#F2F2F2"
   },
   content: {

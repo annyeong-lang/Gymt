@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { TouchableOpacity, View, StyleSheet, Text} from "react-native";
+import { TouchableOpacity, View, StyleSheet, ScrollView, Text} from "react-native";
 import styled from "styled-components/native";
-import Title from "../../components/Title";
 import { AntDesign, FontAwesome, Feather } from '@expo/vector-icons';
 import { useFonts } from 'expo-font';
+import { db } from "../../config";
+import { collection, getDocs } from "../../node_modules/firebase/firestore";
 
 const TextBox = styled.Text`
     display: flex;
@@ -46,25 +47,50 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function SearchResult(){
+
+//firebase
+let resultList = [];
+async function dbGym (resultList) {
+  const querySnapshot = await getDocs(collection(db, "gym"));
+  querySnapshot.forEach((doc) => {
+    resultList.push({
+          image : doc.data().image,
+          name : doc.data().name,
+          location : doc.data().detail_location,
+          phoneNum: doc.data().phone_num,
+          time: doc.data().time,
+          available : doc.data().available,
+          cost : doc.data().cost,
+
+          //그 외 필요
+          city : doc.data().city,
+    });
+  });
+}
+dbGym(resultList);
+
+function filterGym (kind, location) {
+  resultList = resultList.filter((item) => 
+  {
+    return (item.city == location && item.available.includes(kind));
+  });
+}
+
+export default function SearchResult(props){
   const [color, setColor] = useState("false");
-  // const goBack= () =>{
-  //   history.goBack();
-  // };
-    //font
+  const kind = props.route.params.kind;
+  const location = props.route.params.location;
+  filterGym(kind, location);
+
   const [loaded] = useFonts({
     SCDream: require('../../assets/fonts/SCDream3.otf'),
   });
+  
   if (!loaded) {
     return null;
   }
   return(
-    <View>
-      {/* <Container>
-      <Button onPress={() => navigation.navigate("Search")} title="다시 검색">
-      <Button onClick={goBack} title="다시 검색">
-        </Button>
-      </Container> */}
+    <ScrollView>
       <Container>
         <View style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
           <AntDesign name="rightcircle" size={20} color="rgb(236, 159, 87)" />
@@ -76,16 +102,20 @@ export default function SearchResult(){
             <AntDesign name="star" size={24} color="rgb(255, 194, 81)" />}
         </TouchableOpacity>
       </Container>
-      <BG source={require('../../image/체육관.jpg')} />
-      <Result_content>
-        <SemiTitle>경상북도 포항시 오천체육문화타운</SemiTitle>
-        <TextBox><FontAwesome name="map-marker" size={18} color="black" /> <Text style={styles.textList}>경북 포항시 남구 냉천로 580</Text></TextBox>
-        <TextBox><FontAwesome name="phone" size={18} color="black" /> <Text style={styles.textList}>054-280-9525</Text></TextBox>
-        <TextBox><AntDesign name="clockcircle" size={15} color="black" /> <Text style={styles.textList}>07:00 ~ 23:00</Text></TextBox>
-        <TextBox><Feather name="check-square" size={15} color="black" /> <Text style={styles.textList}>배드민턴, 탁구, 농구, 축구, 풋살</Text></TextBox>
-        <TextBox><FontAwesome name="won" size={15} color="black" /> <Text style={styles.textList}>부분 유료</Text></TextBox>
-      </Result_content>
-    </View>
+      {resultList.map( function (item) {
+        return(
+        <><BG source={{uri : item.image}} /><Result_content>
+            <SemiTitle>{item.name}</SemiTitle>
+            <TextBox><FontAwesome name="map-marker" size={18} color="black" /> <Text style={styles.textList}>{item.location}</Text></TextBox>
+            <TextBox><FontAwesome name="phone" size={18} color="black" /> <Text style={styles.textList}>{item.phoneNum}</Text></TextBox>
+            <TextBox><AntDesign name="clockcircle" size={15} color="black" /> <Text style={styles.textList}>{item.time}</Text></TextBox>
+            <TextBox><Feather name="check-square" size={15} color="black" /> <Text style={styles.textList}>{item.available}</Text></TextBox>
+            <TextBox><FontAwesome name="won" size={15} color="black" /> <Text style={styles.textList}>{item.cost}</Text></TextBox>
+          </Result_content></>
+        )
+      })}
+      
+    </ScrollView>
   );
     
   };
